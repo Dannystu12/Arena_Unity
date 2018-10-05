@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,10 +14,11 @@ public class PlayerController : MonoBehaviour {
     private Animator animator;
     
 
-    Vector3 targetPosition;
-    Vector3 lookAtTarget;
-    Quaternion rotation;
+    private Vector3 targetPosition;
+    private Vector3 lookAtTarget;
+    private Quaternion rotation;
     private bool moving = false;
+    private bool attacking = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,39 +28,9 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        ProcessAttack();
         ProcessMovement();
-
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    animator.SetBool("Walk", false);
-        //    animator.SetBool("Idle", false);
-        //    animator.SetBool("Attack", true);
-        //}
-        //else if (Input.GetKeyDown(KeyCode.W)) 
-        //{
-        //    animator.SetBool("Walk", true);
-        //    animator.SetBool("Idle", false);
-        //    animator.SetBool("Attack", false);
-        //}
-
-        //if (Input.GetKey(KeyCode.W))
-        //{
-        //    moveDirection = Vector3.forward ;
-        //    moveDirection *= speed ;
-        //    moveDirection = transform.TransformDirection(moveDirection);
-        //}
-
-        //if(Input.GetKeyUp(KeyCode.W) || Input.GetMouseButtonUp(0))
-        //{
-        //    moveDirection = Vector3.zero;
-        //    animator.SetBool("Walk", false);
-        //    animator.SetBool("Idle", true);
-        //    animator.SetBool("Attack", false);
-        //}
-
-        //rotation += Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
-        //transform.eulerAngles = new Vector3(0, rotation, 0);
-        //controller.Move(moveDirection * Time.deltaTime);
+        ProcessAnimation();
 	}
 
     private void ProcessMovement()
@@ -67,6 +39,10 @@ public class PlayerController : MonoBehaviour {
         {
             SetTargetPosition();
             if (moving) Move();
+        }
+        else if(Input.GetMouseButtonUp(0))
+        {
+            moving = false;
         }
     }
 
@@ -98,20 +74,50 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-
-
     private void Move()
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-
-
         Vector3 dir = targetPosition - transform.position;
         Vector3 movement = dir.normalized * speed * Time.deltaTime;
-        controller.Move(movement);
-        //transform.position = Vector3.MoveTowards(transform.position,
-        //    targetPosition,
-        //    speed * Time.deltaTime);
-
-        
+        controller.Move(movement);        
     }
+
+    private void ProcessAnimation()
+    {
+        if (!moving && !attacking && !animator.GetBool("Idle"))
+        {
+            ResetAnimator();
+            animator.SetBool("Idle", true);
+        }
+
+        if (!attacking && moving && !animator.GetBool("Walk"))
+        {
+            ResetAnimator(); 
+            animator.SetBool("Walk", true);
+        }
+
+     
+        if (attacking && !animator.GetBool("Attack"))
+        {
+            ResetAnimator();
+            animator.SetBool("Attack", true);
+        }
+    }
+
+    private void ProcessAttack()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            attacking = true;
+        }
+    }
+
+    private void ResetAnimator()
+    {
+        foreach (AnimatorControllerParameter parameter in animator.parameters)
+        {
+            animator.SetBool(parameter.name, false);
+        }
+    }
+
 }
