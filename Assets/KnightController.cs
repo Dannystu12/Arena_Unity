@@ -22,26 +22,36 @@ public class KnightController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(Input.GetKeyDown(KeyCode.W))
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetBool("Walk", false);
+            animator.SetBool("Idle", false);
+            animator.SetBool("Attack", true);
+        }
+        else if (Input.GetKeyDown(KeyCode.W)) 
         {
             animator.SetBool("Walk", true);
             animator.SetBool("Idle", false);
+            animator.SetBool("Attack", false);
         }
 
+        
 
 
-        if(Input.GetKey(KeyCode.W))
+
+        if (Input.GetKey(KeyCode.W))
         {
             moveDirection = Vector3.forward ;
             moveDirection *= speed ;
             moveDirection = transform.TransformDirection(moveDirection);
         }
 
-        if(Input.GetKeyUp(KeyCode.W))
+        if(Input.GetKeyUp(KeyCode.W) || Input.GetMouseButtonUp(0))
         {
             moveDirection = Vector3.zero;
             animator.SetBool("Walk", false);
             animator.SetBool("Idle", true);
+            animator.SetBool("Attack", false);
         }
 
         rotation += Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
