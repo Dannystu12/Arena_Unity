@@ -205,7 +205,7 @@ RectTransform:
   m_Children:
   - {fileID: 2074749647}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -249,21 +249,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4467068872387008, guid: 92a111a7fe9f8684488304a03cad4f70, type: 2}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4908653534213042, guid: 92a111a7fe9f8684488304a03cad4f70, type: 2}
-      propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4554438885431052, guid: 92a111a7fe9f8684488304a03cad4f70, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 95195230514731744, guid: 92a111a7fe9f8684488304a03cad4f70,
+    - target: {fileID: 114478532062294908, guid: 92a111a7fe9f8684488304a03cad4f70,
         type: 2}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 2b4c4a52774c74844ba568b70978c73f, type: 2}
+      propertyPath: rotationSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 54690839610366152, guid: 92a111a7fe9f8684488304a03cad4f70,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 52
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a111a7fe9f8684488304a03cad4f70, type: 2}
   m_IsPrefabAsset: 0
@@ -389,7 +386,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4246224620367622, guid: 3265d09c0328d024bb5884a0e4ac968f, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3265d09c0328d024bb5884a0e4ac968f, type: 2}
@@ -498,22 +495,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &563161048 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1096294521672876, guid: 92a111a7fe9f8684488304a03cad4f70,
-    type: 2}
-  m_PrefabInternal: {fileID: 115703131}
---- !u!114 &563161054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 563161048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49419bd025dbfb048817d7f4f026f4a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &912094787
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +706,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &934601254
 GameObject:
@@ -758,7 +739,7 @@ Transform:
   - {fileID: 1546208784}
   - {fileID: 1579323307}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1039964551
 GameObject:
@@ -788,7 +769,7 @@ Transform:
   - {fileID: 912094788}
   - {fileID: 1506755574}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1506755573
 GameObject:
@@ -1053,11 +1034,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643176064}
   m_LocalRotation: {x: 0.4054704, y: -0.086183265, z: 0.013437185, w: 0.9099372}
-  m_LocalPosition: {x: 80.5, y: 360.8, z: -291.9}
+  m_LocalPosition: {x: 59, y: 344, z: -291.9}
   m_LocalScale: {x: 0, y: 1, z: 4.374972}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 47.750004, y: -12.537001, z: -3.8750002}
 --- !u!81 &1643176066
 AudioListener:
@@ -1092,7 +1073,7 @@ Camera:
   far clip plane: 1000
   field of view: 31.6
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 183.30646
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2

@@ -68,6 +68,7 @@ GameObject:
   - component: {fileID: 54690839610366152}
   - component: {fileID: 143236247717359670}
   - component: {fileID: 114478532062294908}
+  - component: {fileID: 114233216737694892}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -823,7 +824,7 @@ Animator:
   m_GameObject: {fileID: 1096294521672876}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: ba24e610e0a338545b447ff44a3cf1cc, type: 3}
-  m_Controller: {fileID: 9100000, guid: e037c354ea635be43bfbd16a282c7ac9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2b4c4a52774c74844ba568b70978c73f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -832,6 +833,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114233216737694892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1096294521672876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49419bd025dbfb048817d7f4f026f4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114478532062294908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -844,7 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  rotationSpeed: 80
+  rotationSpeed: 1
 --- !u!137 &137223502369040272
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
