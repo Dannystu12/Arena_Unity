@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightController : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     [SerializeField] float speed = 100f;
     [SerializeField] float rotationSpeed = 80f;
