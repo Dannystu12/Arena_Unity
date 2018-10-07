@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour {
     private Vector3 lookAtTarget;
     private Quaternion rotation;
     private bool moving = false;
-    private bool attacking = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ProcessAttack();
+        //ProcessAttack();
         ProcessMovement();
         ProcessAnimation();
 	}
@@ -84,33 +83,21 @@ public class PlayerController : MonoBehaviour {
 
     private void ProcessAnimation()
     {
-        if (!moving && !attacking && !animator.GetBool("Idle"))
+        if (!moving && !animator.GetBool("Idle"))
         {
             ResetAnimator();
             animator.SetBool("Idle", true);
         }
 
-        if (!attacking && moving && !animator.GetBool("Walk"))
+        if (moving && !animator.GetBool("Walk"))
         {
             ResetAnimator(); 
             animator.SetBool("Walk", true);
         }
 
-     
-        if (attacking && !animator.GetBool("Attack"))
-        {
-            ResetAnimator();
-            animator.SetBool("Attack", true);
-        }
+    
     }
 
-    private void ProcessAttack()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            attacking = true;
-        }
-    }
 
     private void ResetAnimator()
     {
