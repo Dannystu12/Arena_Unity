@@ -27,9 +27,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //ProcessAttack();
         ProcessMovement();
-        ProcessAnimation();
 	}
 
     private void ProcessMovement()
@@ -80,31 +78,8 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = dir.normalized * speed * Time.deltaTime;
         controller.Move(movement);        
     }
-
-    private void ProcessAnimation()
+    public bool IsMoving()
     {
-        if (!moving && !animator.GetBool("Idle"))
-        {
-            ResetAnimator();
-            animator.SetBool("Idle", true);
-        }
-
-        if (moving && !animator.GetBool("Walk"))
-        {
-            ResetAnimator(); 
-            animator.SetBool("Walk", true);
-        }
-
-    
+        return moving;
     }
-
-
-    private void ResetAnimator()
-    {
-        foreach (AnimatorControllerParameter parameter in animator.parameters)
-        {
-            animator.SetBool(parameter.name, false);
-        }
-    }
-
 }

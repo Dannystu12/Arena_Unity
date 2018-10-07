@@ -228,7 +228,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &403429391
 Transform:
@@ -356,7 +356,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &545130520
 Transform:
@@ -518,6 +518,18 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0.06, z: 0}
+--- !u!114 &584578354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 584578346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599a3a64746096748a3636aa7f1ff3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locomotionAnimationSmoothTime: 0.05
 --- !u!1 &912094787
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +612,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &912475329
 Transform:
@@ -876,7 +888,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1546208784
 Transform:
@@ -961,7 +973,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1579323307
 Transform:
@@ -1057,7 +1069,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1643176064}
   m_LocalRotation: {x: 0.4054704, y: -0.086183265, z: 0.013437185, w: 0.9099372}
-  m_LocalPosition: {x: 74, y: 344, z: -291.9}
+  m_LocalPosition: {x: 59, y: 344, z: -291.9}
   m_LocalScale: {x: 0, y: 1, z: 4.374972}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1094,7 +1106,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 31.6
+  field of view: 30.3
   orthographic: 0
   orthographic size: 183.30646
   m_Depth: 0
@@ -1123,6 +1135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47b6b4bbfee3184d97bca21b0921db0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  zoomSpeed: 4
+  minZoom: 15
+  maxZoom: 35
+  currentZoom: 20
 --- !u!1001 &1806501092
 Prefab:
   m_ObjectHideFlags: 0
@@ -1182,6 +1198,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 2b4c4a52774c74844ba568b70978c73f, type: 2}
+    - target: {fileID: 9500000, guid: b8525abe386180b44924d4fbc4c2014c, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8525abe386180b44924d4fbc4c2014c, type: 3}
   m_IsPrefabAsset: 0

@@ -357,7 +357,7 @@ ModelImporter:
     4300018: pCube44
     4300020: pCube47
     4300022: pCylinder2
-    7400000: Take 001
+    7400000: Idle
     9500000: //RootNode
     13700000: pCube2
     13700002: pCube26 1
@@ -382,7 +382,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: <Root Transform>
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -403,7 +403,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: Idle
       takeName: Take 001
       firstFrame: 1
       lastFrame: 157
@@ -414,10 +414,10 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
-      loopBlendOrientation: 1
-      loopBlendPositionY: 1
-      loopBlendPositionXZ: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
