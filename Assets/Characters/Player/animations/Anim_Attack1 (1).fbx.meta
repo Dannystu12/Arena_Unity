@@ -357,7 +357,7 @@ ModelImporter:
     4300018: pCube44
     4300020: pCube47
     4300022: pCylinder2
-    7400000: Take 001
+    7400000: Attack
     9500000: //RootNode
     13700000: pCube2
     13700002: pCube26 1
@@ -402,7 +402,51 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 60.1
+      lastFrame: 77.2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: Unlock
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 599a3a64746096748a3636aa7f1ff3db,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: Lock
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 599a3a64746096748a3636aa7f1ff3db,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

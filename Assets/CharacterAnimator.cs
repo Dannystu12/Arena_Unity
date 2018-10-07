@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterAnimator : MonoBehaviour {
 
     [SerializeField] float locomotionAnimationSmoothTime = 0.1f;
+    private bool locked = false;
 
     Animator animator;
     PlayerController playerController;
@@ -13,6 +14,7 @@ public class CharacterAnimator : MonoBehaviour {
 	void Start () {
         animator =  GetComponent<Animator>();
         playerController = GetComponent<PlayerController>();
+        playerController.OnAttack += OnAttack;
 	}
 	
 	// Update is called once per frame
@@ -20,4 +22,24 @@ public class CharacterAnimator : MonoBehaviour {
         float speedPercent = playerController.IsMoving() ? 100 : 0; 
         animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
 	}
+
+   private void OnAttack()
+    {
+        animator.SetTrigger("attack");
+    }
+
+    public bool IsLocked()
+    {
+        return locked;
+    }
+
+    public void Lock()
+    {
+        locked = true;
+    }
+
+    public void Unlock()
+    {
+        locked = false;
+    }
 }

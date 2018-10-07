@@ -11,24 +11,36 @@ public class PlayerController : MonoBehaviour {
 
 
     private CharacterController controller;
-    private Animator animator;
-    
+    private CharacterAnimator characterAnimator;
 
     private Vector3 targetPosition;
     private Vector3 lookAtTarget;
     private Quaternion rotation;
-    private bool moving = false;
+    private bool moving = false; 
+
+    public event System.Action OnAttack;
 
 	// Use this for initialization
 	void Start () {
         controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        characterAnimator = GetComponent<CharacterAnimator>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (characterAnimator.IsLocked()) return;
+        ProcessAttack();
         ProcessMovement();
 	}
+
+    private void ProcessAttack()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            moving = false;
+            if(OnAttack != null) OnAttack();
+        }
+    }
 
     private void ProcessMovement()
     {
@@ -78,6 +90,7 @@ public class PlayerController : MonoBehaviour {
         Vector3 movement = dir.normalized * speed * Time.deltaTime;
         controller.Move(movement);        
     }
+
     public bool IsMoving()
     {
         return moving;
