@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField] float speed = 100f;
     [SerializeField] float rotationSpeed = 80f;
-    [SerializeField] float movementDeadzone = 25;
+    [SerializeField] float movementDeadzone = 100;
     [SerializeField] LayerMask movementMask;
 
 
@@ -39,8 +39,17 @@ public class PlayerController : MonoBehaviour {
 
     private void ProcessAttack()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetMouseButton(1))
         {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 1000))
+            {
+                // Check if we hit an enemy
+                // set enemy as focus
+
+            }
             StopMoving();
             if(OnAttack != null) OnAttack();
         }
@@ -74,24 +83,17 @@ public class PlayerController : MonoBehaviour {
             agent.isStopped = false;
 
 
-            if ((targetPosition - transform.position).magnitude <= movementDeadzone)
-            {
-                StopMoving();
-            }
-
-
         }
     }
 
 
     private void Move()
     {
-        Vector3 movementVector = (targetPosition - transform.position).normalized * speed * Time.deltaTime;
-        agent.Move(movementVector );
-
-        Vector3 direction = (targetPosition - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+        agent.SetDestination(targetPosition);
+        if (agent.remainingDistance <= agent.stoppingDistance)
+        {
+            StopMoving();
+        }
     }
 
     public bool IsMoving()
@@ -105,4 +107,5 @@ public class PlayerController : MonoBehaviour {
         agent.velocity = Vector3.zero;
         agent.isStopped = true;
     }
+
 }
