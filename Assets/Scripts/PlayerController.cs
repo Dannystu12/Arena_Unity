@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour {
     private CharacterController controller;
     private CharacterAnimator characterAnimator;
     private NavMeshAgent agent;
+    private Enemy focus;
 
     private Vector3 targetPosition;
     private Vector3 lookAtTarget;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour {
         controller = GetComponent<CharacterController>();
         characterAnimator = GetComponent<CharacterAnimator>();
         agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
     }
 	
 	// Update is called once per frame
@@ -46,12 +48,16 @@ public class PlayerController : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, 1000))
             {
-                // Check if we hit an enemy
-                // set enemy as focus
-
+                Enemy enemy = hit.collider.GetComponent<Enemy>();
+                if(enemy != null)
+                {
+                    SetFocus(enemy);
+                    moving = true;
+                }
+                
             }
-            StopMoving();
-            if(OnAttack != null) OnAttack();
+            //StopMoving();
+            //if(OnAttack != null) OnAttack();
         }
     }
 
@@ -59,12 +65,17 @@ public class PlayerController : MonoBehaviour {
     {
         if (Input.GetMouseButton(0))
         {
+            RemoveFocus();
             SetTargetPosition();
-            if (moving) Move();
+            if (moving) MoveTowards(targetPosition);
         }
         else if(Input.GetMouseButtonUp(0))
         {
             StopMoving();
+        }
+        else if(focus != null)
+        {
+           MoveTowards(focus.transform.position);
         }
     } 
 
@@ -80,21 +91,10 @@ public class PlayerController : MonoBehaviour {
             targetPosition.y = transform.position.y;
 
             moving = true;
-            agent.isStopped = false;
-
 
         }
     }
 
-
-    private void Move()
-    {
-        agent.SetDestination(targetPosition);
-        if (agent.remainingDistance <= agent.stoppingDistance)
-        {
-            StopMoving();
-        }
-    }
 
     public bool IsMoving()
     {
@@ -108,4 +108,32 @@ public class PlayerController : MonoBehaviour {
         agent.isStopped = true;
     }
 
+    private void SetFocus(Enemy enemy)
+    {
+        focus = enemy;
+    }
+
+    private void RemoveFocus()
+    {
+        focus = null;
+    }
+
+    private void MoveTowards(Vector3 point)
+    {
+        agent.SetDestination(point);
+        FaceTarget(point);
+        agent.isStopped = false;
+
+        if (Vector3.Distance(transform.position, point) <= agent.stoppingDistance)
+        {
+            StopMoving();
+        }
+    }
+
+    private void FaceTarget(Vector3 point)
+    {
+        Vector3 direction = (point - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+    }
 }
