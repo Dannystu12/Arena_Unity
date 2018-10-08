@@ -2,16 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour {
 
     [SerializeField] float speed = 100f;
     [SerializeField] float rotationSpeed = 80f;
     [SerializeField] float movementDeadzone = 25;
+    [SerializeField] LayerMask movementMask;
 
 
     private CharacterController controller;
     private CharacterAnimator characterAnimator;
+    private NavMeshAgent agent;
 
     private Vector3 targetPosition;
     private Vector3 lookAtTarget;
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         controller = GetComponent<CharacterController>();
         characterAnimator = GetComponent<CharacterAnimator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 	
 	// Update is called once per frame
@@ -37,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            moving = false;
+            StopMoving();
             if(OnAttack != null) OnAttack();
         }
     }
@@ -51,9 +55,9 @@ public class PlayerController : MonoBehaviour {
         }
         else if(Input.GetMouseButtonUp(0))
         {
-            moving = false;
+            StopMoving();
         }
-    }
+    } 
 
     private void SetTargetPosition()
     {
@@ -63,21 +67,18 @@ public class PlayerController : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, 1000))
         {
             targetPosition = hit.point;
+            
             targetPosition.y = transform.position.y;
 
-            lookAtTarget = new Vector3(targetPosition.x - transform.position.x,
-                transform.position.y,
-                targetPosition.z - transform.position.z);
+            moving = true;
+            agent.isStopped = false;
 
-            rotation = Quaternion.LookRotation(lookAtTarget);
-            if (Vector3.Distance(transform.position, targetPosition) < movementDeadzone)
+
+            if ((targetPosition - transform.position).magnitude <= movementDeadzone)
             {
-                moving = false;
+                StopMoving();
             }
-            else
-            {
-                moving = true;
-            }
+
 
         }
     }
@@ -85,14 +86,23 @@ public class PlayerController : MonoBehaviour {
 
     private void Move()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-        Vector3 dir = targetPosition - transform.position;
-        Vector3 movement = dir.normalized * speed * Time.deltaTime;
-        controller.Move(movement);        
+        Vector3 movementVector = (targetPosition - transform.position).normalized * speed * Time.deltaTime;
+        agent.Move(movementVector );
+
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
 
     public bool IsMoving()
     {
         return moving;
+    }
+
+    private void StopMoving()
+    {
+        moving = false;
+        agent.velocity = Vector3.zero;
+        agent.isStopped = true;
     }
 }
