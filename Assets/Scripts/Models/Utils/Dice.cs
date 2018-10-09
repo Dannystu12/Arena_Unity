@@ -6,6 +6,6 @@ public class Dice : MonoBehaviour {
 
     public static int Roll(int sides)
     {
-        return sides <= 0 ? 0 : Random.RandomRange(0, sides + 1);
+        return sides <= 0 ? 0 : Random.Range(0, sides + 1);
     }
 }

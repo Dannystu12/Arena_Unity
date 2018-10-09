@@ -57,6 +57,7 @@ public class Character : MonoBehaviour, IAttack, Attackable {
     {
         damage = Mathf.Min(hp, damage);
         hp -= damage;
+        if (hp == 0) Die();
     }
 
     public void Attack(Attackable attackable)
@@ -83,9 +84,8 @@ public class Character : MonoBehaviour, IAttack, Attackable {
         return Dice.Roll(damageRoll);
     }
 
-    public void Die()
+    public virtual void Die()
     {
-        Destroy(gameObject);
     }
 
 }

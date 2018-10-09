@@ -7,13 +7,15 @@ public class EnemyController : MonoBehaviour {
     [SerializeField] float lookRadius = 100f;
     [SerializeField] float rotationSpeed = 5f;
 
-    Transform target;
-    NavMeshAgent agent;
+    private Transform target;
+    private NavMeshAgent agent;
+    private CharacterCombat combat;
 
 	// Use this for initialization
 	void Start () {
         target = GameSession.instance.GetPlayer().transform;
         agent = GetComponent<NavMeshAgent>();
+        combat = GetComponent<CharacterCombat>();
 	}
 	
 	// Update is called once per frame
@@ -25,9 +27,12 @@ public class EnemyController : MonoBehaviour {
 
             if(distance <= agent.stoppingDistance)
             {
+                Character targetCharacter = target.GetComponent<Character>();
+                if(targetCharacter)
+                { 
+                    combat.Attack(targetCharacter);
+                }
                 FaceTarget();
-                //Attack
-                
             }
         }
 	}

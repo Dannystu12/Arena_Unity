@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GameSession : MonoBehaviour {
 
+    [SerializeField] float loadDelay = 1f;
+    [SerializeField] GameObject player;
+
+    SceneLoader sceneLoader;
+
     #region Singleton
     public static GameSession instance;
 
@@ -13,9 +18,18 @@ public class GameSession : MonoBehaviour {
     }
     #endregion
 
-    [SerializeField] GameObject player;
+    private void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
+
     public GameObject GetPlayer()
     {
         return player;
+    }
+
+    public void KillPlayer()
+    {
+        sceneLoader.LoadNextSceneAfter(loadDelay);
     }
 }
