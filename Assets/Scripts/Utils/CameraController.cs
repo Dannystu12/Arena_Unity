@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour {
     void LateUpdate()
     {
         //Track player
-        if(target != null)
+        if(target.position != null)
         {
             transform.position = target.position - offset * currentZoom;
             transform.LookAt(target.position + Vector3.up * pitch);

@@ -10,6 +10,8 @@ public class Character : MonoBehaviour, IAttack, Attackable {
     private int damageRoll;
     private bool lastAttackWasCrit;
 
+    public event System.Action<int, int> OnHealthChanged;
+
     public Character(int hp, int armourClass, int damageRoll)
     {
         this.hp = hp;
@@ -57,6 +59,7 @@ public class Character : MonoBehaviour, IAttack, Attackable {
     {
         damage = Mathf.Min(hp, damage);
         hp -= damage;
+        if (damage > 0 && OnHealthChanged != null) OnHealthChanged(MAX_HP, hp);
         if (hp == 0) Die();
     }
 
