@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -13,7 +12,7 @@ public class EnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        target = FindObjectOfType<PlayerController>().transform;
+        target = GameSession.instance.GetPlayer().transform;
         agent = GetComponent<NavMeshAgent>();
 	}
 	
@@ -40,6 +39,7 @@ public class EnemyController : MonoBehaviour {
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
 
+    //Draw look radius in editor
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

@@ -39,7 +39,7 @@ public class PlayerMotor : MonoBehaviour {
     {
         agent.stoppingDistance = newTarget.GetRadius() * stoppingDistanceFactor;
         agent.updateRotation = false;
-        target = newTarget.transform;
+        target = newTarget.GetInteractionTransform();
     }
 
     public void  StopFollowingTarget()
