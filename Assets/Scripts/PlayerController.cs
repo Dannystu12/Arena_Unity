@@ -1,145 +1,55 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.AI;
+﻿using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
-    [SerializeField] float speed = 100f;
-    [SerializeField] float rotationSpeed = 80f;
-    [SerializeField] float movementDeadzone = 100;
     [SerializeField] LayerMask movementMask;
+    [SerializeField] int raycastRange = 1000;
 
+    Camera cam;
+    PlayerMotor motor;
 
-    private CharacterController controller;
-    private CharacterAnimator characterAnimator;
-    private NavMeshAgent agent;
-    private EnemyAI focus;
-
-    private Vector3 targetPosition;
-    private Vector3 lookAtTarget;
-    private Quaternion rotation;
-    private bool moving = false; 
-
-    public event System.Action OnAttack;
-
-	// Use this for initialization
-	void Start () {
-        controller = GetComponent<CharacterController>();
-        characterAnimator = GetComponent<CharacterAnimator>();
-        agent = GetComponent<NavMeshAgent>();
-        agent.updateRotation = false;
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        if (characterAnimator.IsLocked()) return;
-        ProcessAttack();
-        ProcessMovement();
-	}
-
-    private void ProcessAttack()
+    public void Start()
     {
-        if(Input.GetMouseButton(1))
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+        cam = Camera.main;
+        motor = GetComponent<PlayerMotor>();
+    }
 
-            if (Physics.Raycast(ray, out hit, 1000))
-            {
-                EnemyAI enemy = hit.collider.GetComponent<EnemyAI>();
-                if(enemy != null)
-                {
-                    SetFocus(enemy);
-                    moving = true;
-                }
-                
-            }
-            //StopMoving();
-            //if(OnAttack != null) OnAttack();
+    public void Update()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            ProcessInteraction();
         }
+        else if(Input.GetMouseButton(0)) 
+        {
+            ProcessMovement();
+        }
+        else if(Input.GetMouseButtonUp(0))
+        {
+            motor.StopMoving();
+        }   
     }
 
     private void ProcessMovement()
     {
-        if (Input.GetMouseButton(0))
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        
+        if(Physics.Raycast(ray, out hit, raycastRange, movementMask))
         {
-            RemoveFocus();
-            SetTargetPosition();
-            if (moving) MoveTowards(targetPosition);
+            motor.MoveToPoint(hit.point);
         }
-        else if(Input.GetMouseButtonUp(0))
-        {
-            StopMoving();
-        }
-        else if(focus != null)
-        {
-           MoveTowards(focus.transform.position);
-        }
-    } 
+    }
 
-    private void SetTargetPosition()
+    private void ProcessInteraction()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1000))
+        if (Physics.Raycast(ray, out hit, raycastRange))
         {
-            targetPosition = hit.point;
-            
-            targetPosition.y = transform.position.y;
-
-            moving = true;
-
+            // Check if hit interactable
         }
-    }
-
-
-    public bool IsMoving()
-    {
-        return moving;
-    }
-
-    private void StopMoving()
-    {
-        moving = false;
-        agent.velocity = Vector3.zero;
-        agent.isStopped = true;
-    }
-
-    private void SetFocus(EnemyAI enemy)
-    {
-        if (focus != enemy)
-        {
-            if(focus != null) RemoveFocus();
-            focus = enemy;
-        }    
-        enemy.OnFocused(transform);
-    }
-
-    private void RemoveFocus()
-    {
-        if(focus != null) focus.OnDefocused();
-        focus = null;
-    }
-
-    private void MoveTowards(Vector3 point)
-    {
-        agent.SetDestination(point);
-        FaceTarget(point);
-        agent.isStopped = false;
-
-        if (Vector3.Distance(transform.position, point) <= agent.stoppingDistance)
-        {
-            StopMoving();
-        }
-    }
-
-    private void FaceTarget(Vector3 point)
-    {
-        Vector3 direction = (point - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
 }
