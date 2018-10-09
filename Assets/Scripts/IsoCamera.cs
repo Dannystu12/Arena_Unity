@@ -10,18 +10,16 @@ public class IsoCamera : MonoBehaviour {
     [SerializeField] float currentZoom = 15f;
 
 
-    PlayerController player;
+    Player player;
     Vector3 offset;
     Camera camera;
 
-	// Use this for initialization
 	void Start () {
-        player = FindObjectOfType<PlayerController>();
+        player = FindObjectOfType<Player>();
         offset = player.transform.position - gameObject.transform.position;
         camera = GetComponent<Camera>();
     }
 	
-	// Update is called once per frame
 	void Update () {
         UpdateZoom();
         TrackPlayer();

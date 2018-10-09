@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : IAttack, Attackable {
+public class Character : MonoBehaviour, IAttack, Attackable {
     
     protected int hp;
     protected readonly int MAX_HP;
