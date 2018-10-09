@@ -83,4 +83,9 @@ public class Character : MonoBehaviour, IAttack, Attackable {
         return Dice.Roll(damageRoll);
     }
 
+    public void Die()
+    {
+        Destroy(gameObject);
+    }
+
 }
