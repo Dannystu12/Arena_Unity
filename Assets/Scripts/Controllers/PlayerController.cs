@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask movementMask;
     [SerializeField] int raycastRange = 1000;
 
-    Camera cam;
-    PlayerMotor motor;
+    private Interactable focus;
+
+    private Camera cam;
+    private PlayerMotor motor;
 
     public void Start()
     {
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if(Physics.Raycast(ray, out hit, raycastRange, movementMask))
         {
             motor.MoveToPoint(hit.point);
+            RemoveFocus();
         }
     }
 
@@ -49,7 +52,26 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, raycastRange))
         {
-            // Check if hit interactable
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+            Debug.Log("Before");
+            if (interactable != null)
+            {
+                Debug.Log("Aftter");
+
+                SetFocus(interactable);
+            }
         }
+    }
+
+    private void SetFocus(Interactable newFocus)
+    {
+        focus = newFocus;
+        motor.FollowTarget(focus);
+    }
+
+    private void RemoveFocus()
+    {
+        motor.StopFollowingTarget(); 
+        focus = null;
     }
 }
