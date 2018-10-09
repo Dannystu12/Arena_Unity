@@ -53,11 +53,8 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(ray, out hit, raycastRange))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
-            Debug.Log("Before");
             if (interactable != null)
             {
-                Debug.Log("Aftter");
-
                 SetFocus(interactable);
             }
         }
@@ -65,12 +62,20 @@ public class PlayerController : MonoBehaviour
 
     private void SetFocus(Interactable newFocus)
     {
-        focus = newFocus;
-        motor.FollowTarget(focus);
+        //Check if already have a focus then defocus
+        if(newFocus != focus)
+        {
+            if(focus != null) focus.OnDefocused();
+            focus = newFocus;
+            motor.FollowTarget(focus);
+        }
+
+        focus.OnFocused(transform);
     }
 
     private void RemoveFocus()
     {
+        if(focus != null) focus.OnDefocused();
         motor.StopFollowingTarget(); 
         focus = null;
     }

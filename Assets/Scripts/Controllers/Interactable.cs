@@ -4,16 +4,59 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] float radius = 35f;
+    [SerializeField] Transform interactionTransform;
+
+    private bool isFocus = false;
+    private bool hasInteracted = false;
+    private Transform player;
+
+    private void Update()
+    {
+        if(isFocus && !hasInteracted)
+        {
+            float distance = Vector3.Distance(player.position, interactionTransform.position);
+            if(distance <= radius)
+            {
+                Interact();
+                hasInteracted = true;
+            }
+        }
+    }
+
 
     //Show interaction range in editor
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(interactionTransform.position, radius);
     }
 
     public float GetRadius()
     {
         return radius;
+    }
+
+    public void OnFocused(Transform playerTransform)
+    {
+        isFocus = true;
+        player = playerTransform;
+        hasInteracted = false;
+    }
+
+    public void OnDefocused()
+    {
+        hasInteracted = false;
+        isFocus = false;
+        player = null;
+    }
+
+    public virtual void Interact()
+    {
+        Debug.Log("Interaction");
+    }
+
+    public Transform GetInteractionTransform()
+    {
+        return interactionTransform;
     }
 }
