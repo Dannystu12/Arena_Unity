@@ -10,4 +10,9 @@ public class SceneLoader : MonoBehaviour {
         int nextSceneIndex = (currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings;
         SceneManager.LoadScene(nextSceneIndex);
     }
+
+    public void LoadNextSceneAfter(float time)
+    {
+        Invoke("LoadNextScene", time);
+    }
 }
