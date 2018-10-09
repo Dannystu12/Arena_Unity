@@ -10,13 +10,13 @@ public class IsoCamera : MonoBehaviour {
     [SerializeField] float currentZoom = 15f;
 
 
-    Player player;
+    PlayerController player;
     Vector3 offset;
     Camera camera;
 
 	// Use this for initialization
 	void Start () {
-        player = FindObjectOfType<Player>();
+        player = FindObjectOfType<PlayerController>();
         offset = player.transform.position - gameObject.transform.position;
         camera = GetComponent<Camera>();
     }

@@ -2,7 +2,7 @@
 using UnityEngine.AI;
 
 
-public class Enemy : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
 
     [SerializeField] float radius = 3f;
@@ -14,13 +14,12 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (isFocus)   
+        if (isFocus && !hasInteracted)   
         {
             float distance = Vector3.Distance(player.position, transform.position);
 
-            if (!hasInteracted && distance <= radius)
+            if ( distance <= radius)
             {
-
                 hasInteracted = true;
                 Interact();
             }
@@ -42,7 +41,7 @@ public class Enemy : MonoBehaviour
         player = null;
     }
 
-    public virtual void Interact()
+    public void Interact()
     {
         //Attack
     }

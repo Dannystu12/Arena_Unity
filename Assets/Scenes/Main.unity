@@ -2185,7 +2185,7 @@ Prefab:
     - target: {fileID: 195529251085768120, guid: 92a111a7fe9f8684488304a03cad4f70,
         type: 2}
       propertyPath: m_StoppingDistance
-      value: 25
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a111a7fe9f8684488304a03cad4f70, type: 2}

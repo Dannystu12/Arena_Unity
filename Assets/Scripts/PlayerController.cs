@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour {
     private CharacterController controller;
     private CharacterAnimator characterAnimator;
     private NavMeshAgent agent;
-    private Enemy focus;
+    private EnemyAI focus;
 
     private Vector3 targetPosition;
     private Vector3 lookAtTarget;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour {
 
             if (Physics.Raycast(ray, out hit, 1000))
             {
-                Enemy enemy = hit.collider.GetComponent<Enemy>();
+                EnemyAI enemy = hit.collider.GetComponent<EnemyAI>();
                 if(enemy != null)
                 {
                     SetFocus(enemy);
@@ -108,13 +108,19 @@ public class PlayerController : MonoBehaviour {
         agent.isStopped = true;
     }
 
-    private void SetFocus(Enemy enemy)
+    private void SetFocus(EnemyAI enemy)
     {
-        focus = enemy;
+        if (focus != enemy)
+        {
+            if(focus != null) RemoveFocus();
+            focus = enemy;
+        }    
+        enemy.OnFocused(transform);
     }
 
     private void RemoveFocus()
     {
+        if(focus != null) focus.OnDefocused();
         focus = null;
     }
 
