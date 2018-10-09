@@ -40,10 +40,14 @@ public class CameraController : MonoBehaviour {
     void LateUpdate()
     {
         //Track player
-        transform.position = target.position - offset * currentZoom;
-        transform.LookAt(target.position + Vector3.up * pitch);
+        if(target != null)
+        {
+            transform.position = target.position - offset * currentZoom;
+            transform.LookAt(target.position + Vector3.up * pitch);
 
-        //Rotate camera
-        transform.RotateAround(target.position, Vector3.up, currentYaw);
+            //Rotate camera
+            transform.RotateAround(target.position, Vector3.up, currentYaw);
+        }
+
     }
 }

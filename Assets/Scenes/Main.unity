@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ed891738cd7c294283d6a122cb64b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadDelay: 1
   player: {fileID: 508433178}
 --- !u!4 &161361094
 Transform:
@@ -1687,6 +1688,8 @@ GameObject:
   - component: {fileID: 453302986}
   - component: {fileID: 453302991}
   - component: {fileID: 453302992}
+  - component: {fileID: 453302993}
+  - component: {fileID: 453302994}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1801,6 +1804,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &453302993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453302985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5109addaf04b4cf4e8645e70f7010f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &453302994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453302985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c4dd8fbdf20f94f83b9e4662c2f23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackCooldown: 0
+  damageDelay: 0.6
+  combatCooldown: 5
 --- !u!1 &455340255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2084,6 +2113,7 @@ GameObject:
   - component: {fileID: 508433186}
   - component: {fileID: 508433180}
   - component: {fileID: 508433179}
+  - component: {fileID: 508433187}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2150,6 +2180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   locomotionSmoothTime: 0.1
+  attackAnimations:
+  - {fileID: 7400000, guid: fef6b04e40f49ec4c8678337229fbc9c, type: 3}
 --- !u!136 &508433183
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2208,6 +2240,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoppingDistanceFactor: 0.9
   lookSpeed: 5
+--- !u!114 &508433187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 508433178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c4dd8fbdf20f94f83b9e4662c2f23e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackCooldown: 0
+  damageDelay: 0.6
+  combatCooldown: 5
 --- !u!4 &509244541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400314, guid: 899ee7179201fb941990ce35b436b98e,
