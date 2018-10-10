@@ -11,7 +11,7 @@ public class Character : MonoBehaviour, IAttack, Attackable {
     private bool lastAttackWasCrit;
     [SerializeField] float deathDelay = 5f;
 
-    public event System.Action<int, int> OnHealthChanged;
+    public event System.Action<int, int, int, bool> OnHealthChanged;
     public event System.Action OnDeath;
 
     public Character(int hp, int armourClass, int damageRoll)
@@ -57,13 +57,13 @@ public class Character : MonoBehaviour, IAttack, Attackable {
         return !IsAlive();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool crit)
     {
         if (IsAlive())
         {
             damage = Mathf.Min(hp, damage);
             hp -= damage;
-            if (damage > 0 && OnHealthChanged != null) OnHealthChanged(MAX_HP, hp);
+            if (OnHealthChanged != null) OnHealthChanged(MAX_HP, hp, damage, crit);
             if (IsDead()) Die();
         }
     }
@@ -71,7 +71,11 @@ public class Character : MonoBehaviour, IAttack, Attackable {
     public void Attack(Attackable attackable)
     {
         int hitRoll = Dice.Roll(20);
-        if (hitRoll < attackable.GetArmourClass()) return;
+        if (hitRoll < attackable.GetArmourClass())
+        {
+            attackable.TakeDamage(0, lastAttackWasCrit);
+            return;
+        }
 
         int damage = GetDamage();
         if (hitRoll == 20)
@@ -84,7 +88,7 @@ public class Character : MonoBehaviour, IAttack, Attackable {
             lastAttackWasCrit = false;
         }
 
-        attackable.TakeDamage(damage);
+        attackable.TakeDamage(damage, lastAttackWasCrit);
     }
 
     private int GetDamage()

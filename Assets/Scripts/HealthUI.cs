@@ -10,10 +10,17 @@ public class HealthUI : MonoBehaviour {
     [SerializeField] float activeTime = 5f;
     [SerializeField] float lastVisibleTime;
     [SerializeField] float removeDelay = 5f;
+    [SerializeField] GameObject combatTextPrefab;
+    [SerializeField] float damageTextDuration = 2f;
+    [SerializeField] Color missColor;
+    [SerializeField] Color hitColor;
+    [SerializeField] Color critColor;
 
     Transform ui;
     Image healthSlider;
     Transform cam;
+    Canvas canvas;
+    GameObject damageText;
 
 	// Use this for initialization
 	void Start () {
@@ -24,17 +31,27 @@ public class HealthUI : MonoBehaviour {
         {
             if(c.renderMode == RenderMode.WorldSpace)
             {
-                ui = Instantiate(uiPrefab, c.transform).transform;
+                canvas = c;
+                ui = Instantiate(uiPrefab, canvas.transform).transform;
                 healthSlider = ui.GetChild(0).GetComponent<Image>();
                 break;
             }
         }
+        
         GetComponent<Character>().OnHealthChanged +=  OnHealthChanged;
         ui.gameObject.SetActive(false);
     }
 	
 
 	void LateUpdate () {
+
+        if(damageText != null)
+        {
+            RectTransform tempRect = damageText.GetComponent<RectTransform>();
+            damageText.transform.position = target.position;
+            tempRect.forward = cam.forward;
+        }
+
         ui.position = target.position;
         ui.forward = -cam.forward;
         if(Time.time - lastVisibleTime > activeTime)
@@ -43,7 +60,7 @@ public class HealthUI : MonoBehaviour {
         }
 	}
 
-    void OnHealthChanged(int maxHp, int currentHp)
+    void OnHealthChanged(int maxHp, int currentHp, int damage, bool crit)
     {
         ui.gameObject.SetActive(true);
         lastVisibleTime = Time.time;
@@ -53,5 +70,29 @@ public class HealthUI : MonoBehaviour {
         {
             Destroy(ui.gameObject, removeDelay);
         }
+        CreateDamageText(damage, crit);
+    }
+
+    void CreateDamageText(int damage, bool crit)
+    {
+        if (damageText != null) Destroy(damageText);
+        damageText = Instantiate(combatTextPrefab, canvas.transform);
+        
+        Text text = damageText.GetComponent<Text>();
+        text.text = damage.ToString();
+        if (damage == 0)
+        {
+            text.color = missColor;
+        }
+        else if(crit)
+        {
+            text.color = critColor;
+        }
+        else
+        {
+            text.color = hitColor;
+        }
+
+        Destroy(damageText, damageTextDuration);
     }
 }

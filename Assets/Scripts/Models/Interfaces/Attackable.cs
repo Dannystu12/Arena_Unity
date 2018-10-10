@@ -7,5 +7,5 @@ public interface Attackable
     int GetArmourClass();
     bool IsAlive();
     bool IsDead();
-    void TakeDamage(int damage);
+    void TakeDamage(int damage, bool crit);
 }
