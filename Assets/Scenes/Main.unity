@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c4dd8fbdf20f94f83b9e4662c2f23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 0.8
+  attackSpeed: 1.5
   attackCooldown: 0
   damageDelay: 0.6
   combatCooldown: 5

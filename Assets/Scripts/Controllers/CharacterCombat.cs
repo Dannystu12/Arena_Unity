@@ -42,7 +42,15 @@ public class CharacterCombat : MonoBehaviour {
         {
             this.otherCharacter = otherCharacter;
             if (OnAttack != null) OnAttack();
-            attackCooldown = attackSpeed;
+            if(thisCharacter is Enemy)
+            {
+                attackCooldown = Random.Range(attackSpeed / 2, attackSpeed * 1.5f);
+            }
+            else
+            {
+                attackCooldown = attackSpeed;
+            }
+            
             InCombat = true;
             lastAttackTime = Time.time;
         }
