@@ -9,6 +9,9 @@ public class Spawner : MonoBehaviour {
     [SerializeField] float spawnMaxWait;
     [SerializeField] float spawnMinWait;
     [SerializeField] int startWait;
+    [SerializeField] float reductionAmount;
+    [SerializeField] float minMinWait;
+    [SerializeField] float minMaxWait;
 
     // Use this for initialization
     void Start () {
@@ -31,5 +34,11 @@ public class Spawner : MonoBehaviour {
             enemy.transform.position = spawnPoints[randSpawnPoint].transform.position;
             yield return new WaitForSeconds(Random.Range(spawnMinWait, spawnMaxWait));
         }
+    }
+
+    public void UpdateWait()
+    {
+        spawnMinWait = Mathf.Max(spawnMinWait - reductionAmount, minMinWait);
+        spawnMaxWait = Mathf.Max(spawnMaxWait - reductionAmount, minMaxWait);
     }
 }

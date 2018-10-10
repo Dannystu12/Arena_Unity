@@ -9,6 +9,8 @@ public class GameSession : MonoBehaviour {
     private int kills = 0;
 
     SceneLoader sceneLoader;
+    Spawner spawner;
+    Announcer announcer;
 
     #region Singleton
     public static GameSession instance;
@@ -22,6 +24,9 @@ public class GameSession : MonoBehaviour {
     private void Start()
     {
         sceneLoader = FindObjectOfType<SceneLoader>();
+        spawner = FindObjectOfType<Spawner>();
+        announcer = FindObjectOfType<Announcer>();
+        announcer.PlayStart();
     }
 
     public GameObject GetPlayer()
@@ -32,6 +37,7 @@ public class GameSession : MonoBehaviour {
     public void KillPlayer()
     {
         sceneLoader.LoadNextSceneAfter(loadDelay);
+        announcer.PlayEnd();
     }
 
     public int GetKills()
@@ -42,5 +48,7 @@ public class GameSession : MonoBehaviour {
     public void AddKill()
     {
         kills++;
+        spawner.UpdateWait();
+        if (Random.Range(0, 2) == 1) announcer.PlayRandom();
     }
 }
