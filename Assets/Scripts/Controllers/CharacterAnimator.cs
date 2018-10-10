@@ -14,7 +14,10 @@ public class CharacterAnimator : MonoBehaviour
     [SerializeField] AnimatorOverrideController overrideController;
 
     [SerializeField] ParticleSystem bloodVfx;
-
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip hitSound;
+    [SerializeField] AudioClip missSound;
+    [SerializeField] AudioClip deathSound;
     
 
     // use this for initialization
@@ -54,14 +57,19 @@ public class CharacterAnimator : MonoBehaviour
     public void OnDeath()
     {
         //Death animation
+        audioSource.PlayOneShot(deathSound);
     }
 
     void OnHealthChanged(int maxHp, int currentHp, int damage, bool crit)
     {
         if(damage > 0)
         {
-
+            audioSource.PlayOneShot(hitSound);
             bloodVfx.Play();
+        }
+        else
+        {
+            audioSource.PlayOneShot(missSound);
         }
     }
 
