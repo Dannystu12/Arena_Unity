@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
     [SerializeField] float lookRadius = 100f;
     [SerializeField] float rotationSpeed = 5f;
+    [SerializeField] bool overrideLookRadius;
 
     private Transform target;
     private NavMeshAgent agent;
@@ -21,7 +22,7 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float distance = Vector3.Distance(target.position, transform.position);
-        if(distance <= lookRadius)
+        if(distance <= lookRadius || overrideLookRadius)
         {
             agent.SetDestination(target.position);
 

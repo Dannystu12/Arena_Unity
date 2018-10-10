@@ -13,6 +13,9 @@ public class CharacterAnimator : MonoBehaviour
     protected CharacterCombat combat;
     [SerializeField] AnimatorOverrideController overrideController;
 
+    [SerializeField] ParticleSystem bloodVfx;
+
+    
 
     // use this for initialization
     protected virtual void Start()
@@ -30,7 +33,7 @@ public class CharacterAnimator : MonoBehaviour
 
         Character character = GetComponent<Character>();
         character.OnDeath += OnDeath;
-
+        GetComponent<Character>().OnHealthChanged += OnHealthChanged;
     }
 
     // Update is called once per frame
@@ -50,16 +53,16 @@ public class CharacterAnimator : MonoBehaviour
 
     public void OnDeath()
     {
-        SetKinematic(false);
-        animator.enabled = false;
+        //Death animation
     }
 
-    void SetKinematic(bool newValue)
+    void OnHealthChanged(int maxHp, int currentHp, int damage, bool crit)
     {
-        Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
-        foreach (Rigidbody rb in bodies)
+        Debug.Log("Before");
+        if(damage > 0)
         {
-            rb.isKinematic = newValue;
+            Debug.Log("After");
+            bloodVfx.Play();
         }
     }
 

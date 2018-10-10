@@ -44,6 +44,8 @@ public class HealthUI : MonoBehaviour {
         
         GetComponent<Character>().OnHealthChanged +=  OnHealthChanged;
         ui.gameObject.SetActive(false);
+
+        GetComponent<Character>().OnDeath += OnDeath;
     }
 	
 
@@ -52,17 +54,24 @@ public class HealthUI : MonoBehaviour {
         if(damageText != null)
         {
             RectTransform tempRect = damageText.GetComponent<RectTransform>();
-            Vector3 adjustedPosition = target.position + offset;
-            damageText.transform.position = new Vector3(adjustedPosition.x, damageText.transform.position.y, adjustedPosition.z);
-            tempRect.forward = cam.forward;
+            if(tempRect != null)
+            {
+                Vector3 adjustedPosition = target.position + offset;
+                damageText.transform.position = new Vector3(adjustedPosition.x, damageText.transform.position.y, adjustedPosition.z);
+                tempRect.forward = cam.forward;
+            }
+
+        }
+        if(ui != null)
+        {
+            ui.position = target.position;
+            ui.forward = -cam.forward;
+            if (Time.time - lastVisibleTime > activeTime)
+            {
+                ui.gameObject.SetActive(false);
+            }
         }
 
-        ui.position = target.position;
-        ui.forward = -cam.forward;
-        if(Time.time - lastVisibleTime > activeTime)
-        {
-            ui.gameObject.SetActive(false);
-        }
 	}
 
     void OnHealthChanged(int maxHp, int currentHp, int damage, bool crit)
@@ -101,5 +110,11 @@ public class HealthUI : MonoBehaviour {
         }
 
         Destroy(damageText, damageTextDuration);
+    }
+
+    void OnDeath()
+    {
+        Destroy(ui.gameObject);
+
     }
 }
