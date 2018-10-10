@@ -13,6 +13,7 @@ public class CharacterCombat : MonoBehaviour {
     public bool InCombat { get; private set; }
 
     Character thisCharacter;
+    Character otherCharacter;
 
 
     public event System.Action OnAttack;
@@ -39,8 +40,7 @@ public class CharacterCombat : MonoBehaviour {
     {
         if(attackCooldown == 0)
         {
-            StartCoroutine(DoDamage(otherCharacter, damageDelay));
-
+            this.otherCharacter = otherCharacter;
             if (OnAttack != null) OnAttack();
             attackCooldown = attackSpeed;
             InCombat = true;
@@ -49,11 +49,10 @@ public class CharacterCombat : MonoBehaviour {
         
     }
 
-    IEnumerator DoDamage(Character otherCharacter, float delay)
+    public void AttackHitEvent()
     {
-        yield return new WaitForSeconds(delay);
         thisCharacter.Attack(otherCharacter);
-        if(otherCharacter.IsDead())
+        if (otherCharacter.IsDead())
         {
             InCombat = false;
         }

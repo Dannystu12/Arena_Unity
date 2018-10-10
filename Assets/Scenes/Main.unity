@@ -1719,6 +1719,7 @@ GameObject:
   - component: {fileID: 453302993}
   - component: {fileID: 453302994}
   - component: {fileID: 453302995}
+  - component: {fileID: 453302996}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1825,7 +1826,7 @@ Animator:
   m_GameObject: {fileID: 453302985}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 899ee7179201fb941990ce35b436b98e, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2b4c4a52774c74844ba568b70978c73f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1856,7 +1857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c4dd8fbdf20f94f83b9e4662c2f23e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
+  attackSpeed: 0.8
   attackCooldown: 0
   damageDelay: 0.6
   combatCooldown: 5
@@ -1875,6 +1876,21 @@ MonoBehaviour:
   target: {fileID: 1677515271}
   activeTime: 5
   lastVisibleTime: 0
+--- !u!114 &453302996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 453302985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 599a3a64746096748a3636aa7f1ff3db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locomotionSmoothTime: 0.1
+  attackAnimations:
+  - {fileID: 7400000, guid: 33864aea85a17ee46b4b91032fcac91d, type: 3}
+  overrideController: {fileID: 22100000, guid: 48746ede3e64a2a41b3e71767ff2d606, type: 2}
 --- !u!1 &455340255
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2244,7 @@ MonoBehaviour:
   locomotionSmoothTime: 0.1
   attackAnimations:
   - {fileID: 7400000, guid: fef6b04e40f49ec4c8678337229fbc9c, type: 3}
+  overrideController: {fileID: 0}
 --- !u!136 &508433183
 CapsuleCollider:
   m_ObjectHideFlags: 0
