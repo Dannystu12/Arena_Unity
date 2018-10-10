@@ -9,6 +9,7 @@ public class HealthUI : MonoBehaviour {
     [SerializeField] Transform target;
     [SerializeField] float activeTime = 5f;
     [SerializeField] float lastVisibleTime;
+    [SerializeField] float removeDelay = 5f;
 
     Transform ui;
     Image healthSlider;
@@ -48,5 +49,9 @@ public class HealthUI : MonoBehaviour {
         lastVisibleTime = Time.time;
         float healthPct = (float)currentHp / maxHp;
         healthSlider.fillAmount = healthPct;
+        if(healthPct == 0)
+        {
+            Destroy(ui.gameObject, removeDelay);
+        }
     }
 }

@@ -9,8 +9,10 @@ public class Character : MonoBehaviour, IAttack, Attackable {
     private int armourClass;
     private int damageRoll;
     private bool lastAttackWasCrit;
+    [SerializeField] float deathDelay = 5f;
 
     public event System.Action<int, int> OnHealthChanged;
+    public event System.Action OnDeath;
 
     public Character(int hp, int armourClass, int damageRoll)
     {
@@ -57,10 +59,13 @@ public class Character : MonoBehaviour, IAttack, Attackable {
 
     public void TakeDamage(int damage)
     {
-        damage = Mathf.Min(hp, damage);
-        hp -= damage;
-        if (damage > 0 && OnHealthChanged != null) OnHealthChanged(MAX_HP, hp);
-        if (hp == 0) Die();
+        if (IsAlive())
+        {
+            damage = Mathf.Min(hp, damage);
+            hp -= damage;
+            if (damage > 0 && OnHealthChanged != null) OnHealthChanged(MAX_HP, hp);
+            if (IsDead()) Die();
+        }
     }
 
     public void Attack(Attackable attackable)
@@ -89,6 +94,8 @@ public class Character : MonoBehaviour, IAttack, Attackable {
 
     public virtual void Die()
     {
+        if (OnDeath != null) OnDeath();
+        Destroy(gameObject, deathDelay);
     }
 
 }

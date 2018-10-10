@@ -13,6 +13,7 @@ public class CharacterAnimator : MonoBehaviour
     protected CharacterCombat combat;
     [SerializeField] AnimatorOverrideController overrideController;
 
+
     // use this for initialization
     protected virtual void Start()
     {
@@ -26,6 +27,10 @@ public class CharacterAnimator : MonoBehaviour
         
         animator.runtimeAnimatorController = overrideController;
         combat.OnAttack += OnAttack;
+
+        Character character = GetComponent<Character>();
+        character.OnDeath += OnDeath;
+
     }
 
     // Update is called once per frame
@@ -41,6 +46,21 @@ public class CharacterAnimator : MonoBehaviour
         animator.SetTrigger("attack");
         int attackIndex = Random.Range(0, attackAnimations.Length);
         overrideController["Attack"] = attackAnimations[attackIndex];
+    }
+
+    public void OnDeath()
+    {
+        SetKinematic(false);
+        animator.enabled = false;
+    }
+
+    void SetKinematic(bool newValue)
+    {
+        Rigidbody[] bodies = GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody rb in bodies)
+        {
+            rb.isKinematic = newValue;
+        }
     }
 
 }

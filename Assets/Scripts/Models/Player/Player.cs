@@ -11,7 +11,7 @@ public class Player : Character {
 
     public override void Die()
     {
-        GameSession.instance.KillPlayer();
-        Destroy(gameObject);
+        base.Die();
+        GameSession.instance.KillPlayer(); 
     }
 }
