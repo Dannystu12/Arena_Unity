@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224745961552462432}
   - component: {fileID: 222776137514346138}
   - component: {fileID: 114177297818689910}
+  - component: {fileID: 95828848515252460}
   m_Layer: 5
   m_Name: Combat Text
   m_TagString: Untagged
@@ -28,6 +29,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95828848515252460
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270232374709248}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f00bb023d9d91ac4ca87a0219a802e5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114177297818689910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -40,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6886792, g: 0.10070309, b: 0.10070309, a: 1}
+  m_Color: {r: 0.6886792, g: 0.10070309, b: 0.10070309, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -49,7 +68,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 29a33f874b3607d4db4d7268eb04a9f7, type: 3}
-    m_FontSize: 13
+    m_FontSize: 8
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 6

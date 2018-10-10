@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour {
 
+    [Header("Health Bar")]
     [SerializeField] GameObject uiPrefab;
     [SerializeField] Transform target;
     [SerializeField] float activeTime = 5f;
     [SerializeField] float lastVisibleTime;
+
+    [Header("Combat Text Popup")]
     [SerializeField] float removeDelay = 5f;
     [SerializeField] GameObject combatTextPrefab;
     [SerializeField] float damageTextDuration = 2f;
     [SerializeField] Color missColor;
     [SerializeField] Color hitColor;
     [SerializeField] Color critColor;
+    [SerializeField] Vector3 offset = new Vector3(0, 100f, 0);
 
     Transform ui;
     Image healthSlider;
@@ -48,7 +52,8 @@ public class HealthUI : MonoBehaviour {
         if(damageText != null)
         {
             RectTransform tempRect = damageText.GetComponent<RectTransform>();
-            damageText.transform.position = target.position;
+            Vector3 adjustedPosition = target.position + offset;
+            damageText.transform.position = new Vector3(adjustedPosition.x, damageText.transform.position.y, adjustedPosition.z);
             tempRect.forward = cam.forward;
         }
 
@@ -80,6 +85,7 @@ public class HealthUI : MonoBehaviour {
         
         Text text = damageText.GetComponent<Text>();
         text.text = damage.ToString();
+
         if (damage == 0)
         {
             text.color = missColor;
@@ -87,6 +93,7 @@ public class HealthUI : MonoBehaviour {
         else if(crit)
         {
             text.color = critColor;
+            text.fontSize += text.fontSize;
         }
         else
         {
