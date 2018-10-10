@@ -58,10 +58,9 @@ public class CharacterAnimator : MonoBehaviour
 
     void OnHealthChanged(int maxHp, int currentHp, int damage, bool crit)
     {
-        Debug.Log("Before");
         if(damage > 0)
         {
-            Debug.Log("After");
+
             bloodVfx.Play();
         }
     }

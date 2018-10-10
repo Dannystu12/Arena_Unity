@@ -6,6 +6,7 @@ public class GameSession : MonoBehaviour {
 
     [SerializeField] float loadDelay = 1f;
     [SerializeField] GameObject player;
+    private int kills = 0;
 
     SceneLoader sceneLoader;
 
@@ -31,5 +32,15 @@ public class GameSession : MonoBehaviour {
     public void KillPlayer()
     {
         sceneLoader.LoadNextSceneAfter(loadDelay);
+    }
+
+    public int GetKills()
+    {
+        return kills;
+    }
+
+    public void AddKill()
+    {
+        kills++;
     }
 }

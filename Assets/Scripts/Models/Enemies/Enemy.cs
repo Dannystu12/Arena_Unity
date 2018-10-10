@@ -15,5 +15,6 @@ public class Enemy : Character {
     public override void Die()
     {
         base.Die();
+        GameSession.instance.AddKill();
     }
 }
