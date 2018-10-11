@@ -59,6 +59,7 @@ public class CharacterCombat : MonoBehaviour {
 
     public void AttackHitEvent()
     {
+
         thisCharacter.Attack(otherCharacter);
         if (otherCharacter.IsDead())
         {

@@ -1917,6 +1917,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114542567291100218, guid: 92a111a7fe9f8684488304a03cad4f70,
+        type: 2}
+      propertyPath: deathDelay
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92a111a7fe9f8684488304a03cad4f70, type: 2}
   m_IsPrefabAsset: 0
@@ -6688,6 +6693,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1404987036}
   m_Mesh: {fileID: 4300022, guid: ce8001901b7cb2245998eacf7de79015, type: 3}
+--- !u!1001 &1416312851
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 131
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551579617647498, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114270897818424928, guid: 82673d2b6ffe9e44ca50a86a181c622b,
+        type: 2}
+      propertyPath: deathDelay
+      value: 0.25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 82673d2b6ffe9e44ca50a86a181c622b, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1444482537
 GameObject:
   m_ObjectHideFlags: 0

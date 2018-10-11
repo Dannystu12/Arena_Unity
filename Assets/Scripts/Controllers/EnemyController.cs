@@ -11,10 +11,14 @@ public class EnemyController : MonoBehaviour {
     private Transform target;
     private NavMeshAgent agent;
     private CharacterCombat combat;
+    private Character playerCharacter;
+    private Character thisCharacter;
 
 	// Use this for initialization
 	void Start () {
         target = GameSession.instance.GetPlayer().transform;
+        playerCharacter = GameSession.instance.GetPlayer().GetComponent<Character>();
+        thisCharacter = GetComponent<Character>();
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
 	}
@@ -22,7 +26,7 @@ public class EnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float distance = Vector3.Distance(target.position, transform.position);
-        if(distance <= lookRadius || overrideLookRadius)
+        if ((distance <= lookRadius || overrideLookRadius) && playerCharacter.IsAlive() && thisCharacter.IsAlive()) ;
         {
             agent.SetDestination(target.position);
 

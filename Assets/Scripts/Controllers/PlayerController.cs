@@ -10,15 +10,18 @@ public class PlayerController : MonoBehaviour
 
     private Camera cam;
     private PlayerMotor motor;
+    private Character thisCharacter;
 
     public void Start()
     {
         cam = Camera.main;
         motor = GetComponent<PlayerMotor>();
+        thisCharacter = GetComponent<Character>();
     }
 
     public void Update()
     {
+        if (thisCharacter.IsDead()) return;
         if(Input.GetMouseButtonDown(1))
         {
             ProcessInteraction();
