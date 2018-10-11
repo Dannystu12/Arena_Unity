@@ -101,5 +101,9 @@ public class Character : MonoBehaviour, IAttack, Attackable {
         if (OnDeath != null) OnDeath();
         Destroy(gameObject, deathDelay);
     }
+    public void RestoreHealth()
+    {
+        hp = MAX_HP;
+    }
 
 }

@@ -6,6 +6,7 @@ public class GameSession : MonoBehaviour {
 
     [SerializeField] float loadDelay = 1f;
     [SerializeField] GameObject player;
+    [SerializeField] int killsBeforeRestore = 10;
     private int kills = 0;
 
     SceneLoader sceneLoader;
@@ -50,5 +51,12 @@ public class GameSession : MonoBehaviour {
         kills++;
         spawner.UpdateWait();
         if (Random.Range(0, 2) == 1) announcer.PlayRandom();
+        if (kills % killsBeforeRestore == 0) RestorePlayerHealth();
+    }
+
+    private void RestorePlayerHealth()
+    {
+        Character playerCharacter = player.GetComponent<Character>();
+        playerCharacter.RestoreHealth();
     }
 }
