@@ -15,9 +15,10 @@ public class CharacterAnimator : MonoBehaviour
 
     [SerializeField] ParticleSystem bloodVfx;
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip hitSound;
-    [SerializeField] AudioClip missSound;
-    [SerializeField] AudioClip deathSound;
+    [SerializeField] AudioClip[] hitSound;
+    [SerializeField] AudioClip[] missSound;
+    [SerializeField] AudioClip[] deathSound;
+    [Tooltip("One in:")][SerializeField] int chanceForBlockSound = 5;
     
 
     // use this for initialization
@@ -57,20 +58,35 @@ public class CharacterAnimator : MonoBehaviour
     public void OnDeath()
     {
         //Death animation
-        audioSource.PlayOneShot(deathSound);
+        audioSource.PlayOneShot(GetRandomSound(deathSound));
     }
 
     void OnHealthChanged(int maxHp, int currentHp, int damage, bool crit)
     {
         if(damage > 0)
         {
-            audioSource.PlayOneShot(hitSound);
+            audioSource.PlayOneShot(GetRandomSound(hitSound), 0.7f);
             bloodVfx.Play();
         }
         else
         {
-            audioSource.PlayOneShot(missSound);
+            if(Roll(chanceForBlockSound))
+                audioSource.PlayOneShot(GetRandomSound(missSound), 0.5f);
         }
     }
+
+    AudioClip GetRandomSound(AudioClip[] clips)
+    {
+        
+        int i = Random.Range(0, clips.Length);
+        return clips[i];
+    }
+
+    bool Roll(int chance)
+    {
+        int i = Random.Range(1, chance + 1);
+        return i == chance;
+    }
+
 
 }

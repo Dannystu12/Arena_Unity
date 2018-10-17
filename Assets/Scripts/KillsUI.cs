@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class KillsUI : MonoBehaviour {
 
-    Text killText;
+    TextMeshProUGUI killText;
 	// Use this for initialization
 	void Start () {
-        killText = GetComponent<Text>();
+        killText = GetComponent<TextMeshProUGUI>();
 	}
 	
 	// Update is called once per frame

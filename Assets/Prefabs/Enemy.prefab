@@ -1891,7 +1891,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441673429179664}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.21643952, y: 0, z: 0, w: 0.97629607}
   m_LocalPosition: {x: 0, y: 2.3, z: 49}
   m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children:
@@ -1900,7 +1900,7 @@ Transform:
   - {fileID: 4460194007509482}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -25, y: 0, z: 0}
 --- !u!4 &4157592065180118
 Transform:
   m_ObjectHideFlags: 1
@@ -3459,9 +3459,9 @@ MonoBehaviour:
   combatTextPrefab: {fileID: 1270232374709248, guid: 1594a47d30b3d6d4f97f952884b69b94,
     type: 2}
   damageTextDuration: 2
-  missColor: {r: 0.18369527, g: 0.28508493, b: 0.9056604, a: 1}
-  hitColor: {r: 0.8113208, g: 0.16456035, b: 0.23567016, a: 1}
-  critColor: {r: 0.8679245, g: 0.67590564, b: 0.1514774, a: 1}
+  missColor: {r: 0.27687788, g: 0.63069165, b: 0.9622642, a: 1}
+  hitColor: {r: 1, g: 0.18851303, b: 0.13679248, a: 1}
+  critColor: {r: 1, g: 0.97065586, b: 0.2216981, a: 1}
   offset: {x: 0, y: 2, z: 0}
 --- !u!114 &114954224986240168
 MonoBehaviour:
@@ -3489,13 +3489,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   locomotionSmoothTime: 0.1
   attackAnimations:
-  - {fileID: 7400000, guid: 33864aea85a17ee46b4b91032fcac91d, type: 3}
+  - {fileID: 7400000, guid: dcab317583f13a6468b349a8b2f7d42c, type: 3}
   overrideController: {fileID: 22100000, guid: 48746ede3e64a2a41b3e71767ff2d606, type: 2}
   bloodVfx: {fileID: 198048566150927284}
   audioSource: {fileID: 82575863644744898}
-  hitSound: {fileID: 8300000, guid: 973ed48b31c28c444acbaa3857f33920, type: 3}
-  missSound: {fileID: 8300000, guid: 12807c03326b9994387bb6eddfbb0d78, type: 3}
-  deathSound: {fileID: 8300000, guid: 4a161b0389165ff47a7e0458d07e1420, type: 3}
+  hitSound:
+  - {fileID: 8300000, guid: 5bd808e6b4be80e4eb8bbb771ff71a0a, type: 3}
+  - {fileID: 8300000, guid: 88443314b78294b4499c39b9626866b4, type: 3}
+  - {fileID: 8300000, guid: 42d6a2f85e076444fb35fb5d6285f224, type: 3}
+  - {fileID: 8300000, guid: b1428b0560e625f4294a117b01b1e15c, type: 3}
+  - {fileID: 8300000, guid: 77ef92e992aa4f34fb8bcf7bd1d17d6a, type: 3}
+  missSound:
+  - {fileID: 8300000, guid: 57188ce9a5f1fbc4791ca48f670df463, type: 3}
+  - {fileID: 8300000, guid: 65c02f638c4ce144bbcd636b5d695ef6, type: 3}
+  - {fileID: 8300000, guid: d7346c9963e10894da3e9fed9427759c, type: 3}
+  - {fileID: 8300000, guid: 35b99e3b79665b149bb9917f5e014350, type: 3}
+  - {fileID: 8300000, guid: 8c8013fd958e88d46b37ee2a3a9710fa, type: 3}
+  - {fileID: 8300000, guid: cf5c42e72faebf84ca027cefe6a73251, type: 3}
+  - {fileID: 8300000, guid: faf09a4633d9e6947b78e5d04401a398, type: 3}
+  - {fileID: 8300000, guid: 33a2b26bf0cfb1e40aa012af4099ebe5, type: 3}
+  - {fileID: 8300000, guid: 3791c6a2906036b46862202977185b2a, type: 3}
+  - {fileID: 8300000, guid: 6b6583ab26f709a4092de813e6745d19, type: 3}
+  - {fileID: 8300000, guid: fa40acf980fb3b2419cb6cfcc37b823d, type: 3}
+  - {fileID: 8300000, guid: 43e08f27d746d7d41b44615baed6eeff, type: 3}
+  deathSound:
+  - {fileID: 8300000, guid: 1c9b546cdfbb1904b80f86be42da8ceb, type: 3}
+  - {fileID: 8300000, guid: 6099927c21d77b645b669a1ca5a608d6, type: 3}
+  chanceForBlockSound: 2
 --- !u!136 &136317720721059156
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -3599,8 +3619,8 @@ NavMeshAgent:
   m_GameObject: {fileID: 1441673429179664}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.06
-  m_Speed: 50
+  m_Radius: 0.7
+  m_Speed: 25
   m_Acceleration: 500
   avoidancePriority: 50
   m_AngularSpeed: 2500
@@ -3608,7 +3628,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.12
+  m_Height: 1.49
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

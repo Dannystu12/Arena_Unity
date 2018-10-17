@@ -395,6 +395,17 @@ Prefab:
       propertyPath: m_Name
       value: Restart
       objectReference: {fileID: 0}
+    - target: {fileID: 114810185972813626, guid: 7eb1a0a05802f7b44828fe403d1762d3,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: ecbbc7641f5e0ce4f85215349ee66723,
+        type: 3}
+    - target: {fileID: 114810185972813626, guid: 7eb1a0a05802f7b44828fe403d1762d3,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 43
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eb1a0a05802f7b44828fe403d1762d3, type: 2}
   m_IsPrefabAsset: 0

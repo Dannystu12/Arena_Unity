@@ -5555,9 +5555,32 @@ MonoBehaviour:
   overrideController: {fileID: 0}
   bloodVfx: {fileID: 198239568314331926}
   audioSource: {fileID: 82767230317839532}
-  hitSound: {fileID: 8300000, guid: 6568138a7531eeb498c0eba7460cdc15, type: 3}
-  missSound: {fileID: 8300000, guid: 3f640fa27e3559e49aa663a69417957e, type: 3}
-  deathSound: {fileID: 8300000, guid: 9b96d4c98f597be42b4d2ae63bf2b64f, type: 3}
+  hitSound:
+  - {fileID: 8300000, guid: acbb71b387fb99048bdaf4eb7fa71c0a, type: 3}
+  - {fileID: 8300000, guid: 4e2bdbf4d00499546ad0dbdeca3a511c, type: 3}
+  - {fileID: 8300000, guid: 9c4b7c31f6ad23b419c814efbdab31e6, type: 3}
+  - {fileID: 8300000, guid: 9451f00213bcab04c9cc25692dd38952, type: 3}
+  - {fileID: 8300000, guid: 74310e74c44f5e34baf018bd58cc2445, type: 3}
+  - {fileID: 8300000, guid: e91c671ac28451a4485855828414f492, type: 3}
+  - {fileID: 8300000, guid: a3bb3df50d7124a42b82580fd6b79e5f, type: 3}
+  - {fileID: 8300000, guid: f023ea13b44d89241a622bece876d131, type: 3}
+  missSound:
+  - {fileID: 8300000, guid: e60e4c62ef3c7064cbfca662a56c3938, type: 3}
+  - {fileID: 8300000, guid: ae4ffae91c53bcd4a9dcc0687a196d78, type: 3}
+  - {fileID: 8300000, guid: e9304ca4c7d622548ac4369d20d66239, type: 3}
+  - {fileID: 8300000, guid: 63b97437baab4e149a7e6295ab5296b6, type: 3}
+  - {fileID: 8300000, guid: 4504579ba38255f4ebedec7352f96d5c, type: 3}
+  - {fileID: 8300000, guid: 28173f14d0e4a6848849676370d75a1c, type: 3}
+  - {fileID: 8300000, guid: 9342be0d03028a64db67ffd9d485a689, type: 3}
+  - {fileID: 8300000, guid: c21f370c4217e6e47bf3f85f7ca4edb4, type: 3}
+  deathSound:
+  - {fileID: 8300000, guid: cb82d45fd1402f34bbb0074de41ec699, type: 3}
+  - {fileID: 8300000, guid: d1fbc14a87a47d047a5ab5889b8ae3d3, type: 3}
+  - {fileID: 8300000, guid: 1753cf9b2bd980e46bb08646422b1b94, type: 3}
+  - {fileID: 8300000, guid: e4a1255e2b373ed4d80ea2db7860c858, type: 3}
+  - {fileID: 8300000, guid: 855fd0b24d6412342a920ce22cec7ee8, type: 3}
+  - {fileID: 8300000, guid: 55673cd3bbccb744c9144f0d867099ff, type: 3}
+  chanceForBlockSound: 2
 --- !u!136 &136005047995496462
 CapsuleCollider:
   m_ObjectHideFlags: 1
