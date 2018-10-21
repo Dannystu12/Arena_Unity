@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!target) return;
         float distance = Vector3.Distance(target.position, transform.position);
         if ((distance <= lookRadius || overrideLookRadius) && playerCharacter.IsAlive() && thisCharacter.IsAlive()) ;
         {
