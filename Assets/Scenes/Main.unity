@@ -8609,6 +8609,49 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1133768690238142, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723426308239720, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.5007608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723426308239720, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0.4992381
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723426308239720, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.49923798
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723426308239720, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.5007608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723426308239720, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4723426308239720, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -89.826004
+      objectReference: {fileID: 0}
+    - target: {fileID: 119054600522320534, guid: 9c97e4770b182a2498c41f8df21f8620,
+        type: 2}
+      propertyPath: m_OrthographicSize
+      value: 25.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 119054600522320534, guid: 9c97e4770b182a2498c41f8df21f8620,
+        type: 2}
+      propertyPath: m_FarClipPlane
+      value: 123.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 119054600522320534, guid: 9c97e4770b182a2498c41f8df21f8620,
+        type: 2}
+      propertyPath: m_NearClipPlane
+      value: 106.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
   m_IsPrefabAsset: 0
