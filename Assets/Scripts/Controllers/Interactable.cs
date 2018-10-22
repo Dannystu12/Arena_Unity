@@ -5,10 +5,19 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] float radius = 35f;
     [SerializeField] Transform interactionTransform;
+    [SerializeField] GameObject targetIndicatorProjector;
 
     private bool isFocus = false;
     private bool hasInteracted = false;
     private Transform player;
+    private Projector focusIndicator;
+
+    private void Start()
+    {
+        targetIndicatorProjector.SetActive(false);
+    }
+
+
 
     private void Update()
     {
@@ -41,6 +50,7 @@ public class Interactable : MonoBehaviour
         isFocus = true;
         player = playerTransform;
         hasInteracted = false;
+        targetIndicatorProjector.SetActive(true);
     }
 
     public void OnDefocused()
@@ -48,6 +58,7 @@ public class Interactable : MonoBehaviour
         hasInteracted = false;
         isFocus = false;
         player = null;
+        targetIndicatorProjector.SetActive(false);
     }
 
     public virtual void Interact()
