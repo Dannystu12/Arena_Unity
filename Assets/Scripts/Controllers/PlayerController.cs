@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
 
     [SerializeField] LayerMask movementMask;
     [SerializeField] int raycastRange = 1000;
+    [SerializeField] float maxTabDistance = 100f;
 
     private Interactable focus;
 
@@ -22,6 +24,13 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
         if (thisCharacter.IsDead()) return;
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            FocusNextTarget();
+        }
+
+
         if(Input.GetMouseButtonDown(1))
         {
             ProcessInteraction();
@@ -34,6 +43,30 @@ public class PlayerController : MonoBehaviour
         {
             motor.StopMoving();
         }   
+    }
+
+    private void FocusNextTarget()
+    {
+        EnemyInteractable[] enemies = FindObjectsOfType<EnemyInteractable>();
+
+        EnemyInteractable closestEnemy = null;
+        float closestDistance = maxTabDistance;
+
+        foreach(EnemyInteractable enemy in enemies)
+        {
+            if (enemy == focus) continue;
+            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            if(distance <= closestDistance)
+            {
+                closestDistance = distance;
+                closestEnemy = enemy;
+            }
+        }
+
+        if(closestEnemy != null)
+        {
+            SetFocus(closestEnemy);
+        }
     }
 
     private void ProcessMovement()
