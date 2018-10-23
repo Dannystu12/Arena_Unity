@@ -207,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1137534937074460
 GameObject:
   m_ObjectHideFlags: 1
@@ -3058,13 +3058,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1133768690238142}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: 0.5007608, y: 0.4992381, z: -0.49923798, w: 0.5007608}
   m_LocalPosition: {x: -0.063, y: 3.123, z: -0.14}
   m_LocalScale: {x: 0.02857143, y: 0.028571444, z: 0.028571444}
   m_Children: []
   m_Father: {fileID: 4679237913273448}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: -89.826004}
 --- !u!4 &4729552364032546
 Transform:
   m_ObjectHideFlags: 1
@@ -3817,12 +3817,12 @@ Projector:
   m_GameObject: {fileID: 1133768690238142}
   m_Enabled: 1
   serializedVersion: 2
-  m_NearClipPlane: 105.2
-  m_FarClipPlane: 120.89
+  m_NearClipPlane: 106.2
+  m_FarClipPlane: 123.4
   m_FieldOfView: -1.88
   m_AspectRatio: 1
   m_Orthographic: 1
-  m_OrthographicSize: 26.4
+  m_OrthographicSize: 25.41
   m_Material: {fileID: 2100000, guid: c8c80c5b03f5c7e40b07eb2170e667e5, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
