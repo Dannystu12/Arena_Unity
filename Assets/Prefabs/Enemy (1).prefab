@@ -207,7 +207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1137534937074460
 GameObject:
   m_ObjectHideFlags: 1
@@ -3786,6 +3786,7 @@ MonoBehaviour:
   radius: 56.29
   interactionTransform: {fileID: 4679237913273448}
   targetIndicatorProjector: {fileID: 1133768690238142}
+  focusSfx: {fileID: 8300000, guid: 90f1c24f3e0bcee4db0610c1f1913a92, type: 3}
 --- !u!114 &114859559470926742
 MonoBehaviour:
   m_ObjectHideFlags: 1
