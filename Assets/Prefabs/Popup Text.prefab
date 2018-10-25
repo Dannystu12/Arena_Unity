@@ -78,7 +78,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 3942862
-  m_fontColor: {r: 0.8113208, g: 0.1645603, b: 0.2356702, a: 0}
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -95,8 +95,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0
-  m_fontSizeBase: 26
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -173,9 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd226dce5081da248bb5c3563291686c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missColor: {r: 0, g: 0.1413045, b: 1, a: 1}
+  missColor: {r: 0, g: 0.007030964, b: 1, a: 1}
   hitColor: {r: 1, g: 0.059090905, b: 0, a: 1}
-  critColor: {r: 1, g: 0.99068856, b: 0, a: 0}
+  critColor: {r: 0.9161792, g: 0, b: 1, a: 1}
 --- !u!222 &222868424177148470
 CanvasRenderer:
   m_ObjectHideFlags: 1

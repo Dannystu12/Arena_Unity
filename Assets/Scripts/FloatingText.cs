@@ -28,16 +28,16 @@ public class FloatingText : MonoBehaviour {
         damageText.SetText(damage.ToString());
         if (crit) 
         {
-            damageText.color = critColor;
-           // damageText.fontSize += damageText.fontSize;
+            damageText.faceColor = critColor;
+            damageText.fontSize += damageText.fontSize;
         }
         else if(damage == 0)
         {
-            damageText.color = missColor;
+            damageText.faceColor = missColor;
         }
         else
         {
-            damageText.color = hitColor;
+            damageText.faceColor = hitColor;
         }
 
     }
