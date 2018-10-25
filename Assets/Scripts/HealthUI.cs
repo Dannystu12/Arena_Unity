@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthUI : MonoBehaviour {
 
@@ -24,7 +25,7 @@ public class HealthUI : MonoBehaviour {
     Image healthSlider;
     Transform cam;
     Canvas canvas;
-    GameObject damageText;
+    FloatingText damageText;
 
 	// Use this for initialization
 	void Start () {
@@ -56,8 +57,6 @@ public class HealthUI : MonoBehaviour {
             RectTransform tempRect = damageText.GetComponent<RectTransform>();
             if(tempRect != null)
             {
-                Vector3 adjustedPosition = target.position + offset;
-                damageText.transform.position = new Vector3(adjustedPosition.x, damageText.transform.position.y, adjustedPosition.z);
                 tempRect.forward = cam.forward;
             }
 
@@ -89,27 +88,28 @@ public class HealthUI : MonoBehaviour {
 
     void CreateDamageText(int damage, bool crit)
     {
+       
         if (damageText != null) Destroy(damageText);
-        damageText = Instantiate(combatTextPrefab, canvas.transform);
-        
-        Text text = damageText.GetComponent<Text>();
-        text.text = damage.ToString();
+        damageText = Instantiate(combatTextPrefab, canvas.transform).GetComponent<FloatingText>();
+
+
+        damageText.SetText(damage.ToString());
 
         if (damage == 0)
         {
-            text.color = missColor;
+            damageText.SetColor(missColor);
         }
-        else if(crit)
+        else if (crit)
         {
-            text.color = critColor;
-            text.fontSize += text.fontSize;
+            damageText.SetColor(critColor);
+            //text.fontsize += text.fontsize; 
         }
         else
         {
-            text.color = hitColor;
+            damageText.SetColor(hitColor);
         }
 
-        Destroy(damageText, damageTextDuration);
+
     }
 
     void OnDeath()
