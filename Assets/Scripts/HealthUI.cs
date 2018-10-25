@@ -11,21 +11,18 @@ public class HealthUI : MonoBehaviour {
     [SerializeField] Transform target;
     [SerializeField] float activeTime = 5f;
     [SerializeField] float lastVisibleTime;
+    [SerializeField] float removeDelay = 5f;
 
     [Header("Combat Text Popup")]
-    [SerializeField] float removeDelay = 5f;
     [SerializeField] GameObject combatTextPrefab;
-    [SerializeField] float damageTextDuration = 2f;
-    [SerializeField] Color missColor;
-    [SerializeField] Color hitColor;
-    [SerializeField] Color critColor;
-    [SerializeField] Vector3 offset = new Vector3(0, 100f, 0);
+    [SerializeField] Vector3 damageOffset = new Vector3(0f, -250f, 0f);
+
 
     Transform ui;
     Image healthSlider;
     Transform cam;
     Canvas canvas;
-    FloatingText damageText;
+    GameObject damageText;
 
 	// Use this for initialization
 	void Start () {
@@ -50,19 +47,21 @@ public class HealthUI : MonoBehaviour {
     }
 	
 
-	void LateUpdate () {
+	void LateUpdate () { 
 
         if(damageText != null)
         {
             RectTransform tempRect = damageText.GetComponent<RectTransform>();
             if(tempRect != null)
             {
+
+                damageText.transform.position = new Vector3(target.position.x + damageOffset.x, damageText.transform.position.y + damageOffset.y, target.position.z + damageOffset.z);
                 tempRect.forward = cam.forward;
             }
 
-        }
+        } 
         if(ui != null)
-        {
+        { 
             ui.position = target.position;
             ui.forward = -cam.forward;
             if (Time.time - lastVisibleTime > activeTime)
@@ -90,31 +89,14 @@ public class HealthUI : MonoBehaviour {
     {
        
         if (damageText != null) Destroy(damageText);
-        damageText = Instantiate(combatTextPrefab, canvas.transform).GetComponent<FloatingText>();
-
-
-        damageText.SetText(damage.ToString());
-
-        if (damage == 0)
-        {
-            damageText.SetColor(missColor);
-        }
-        else if (crit)
-        {
-            damageText.SetColor(critColor);
-            //text.fontsize += text.fontsize; 
-        }
-        else
-        {
-            damageText.SetColor(hitColor);
-        }
-
-
-    }
-
+        damageText = Instantiate(combatTextPrefab, canvas.transform);
+        RectTransform tempRect = damageText.GetComponent<RectTransform>();
+        tempRect.transform.position = target.position;
+        damageText.GetComponent<FloatingText>().SetDamage(damage, crit);
+    } 
+     
     void OnDeath()
     {
         Destroy(ui.gameObject);
-
     }
 }

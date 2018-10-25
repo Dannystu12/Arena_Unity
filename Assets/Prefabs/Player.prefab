@@ -5517,13 +5517,9 @@ MonoBehaviour:
   activeTime: 5
   lastVisibleTime: 0
   removeDelay: 5
-  combatTextPrefab: {fileID: 1226965713293560, guid: 24b49b552f2d94f4d88fcb698d39ca52,
+  combatTextPrefab: {fileID: 1632850398116756, guid: 496e2229d7c748646ad83da3fdb0b99e,
     type: 2}
-  damageTextDuration: 2
-  missColor: {r: 0.27687788, g: 0.63069165, b: 0.9622642, a: 1}
-  hitColor: {r: 1, g: 0.18851303, b: 0.13679248, a: 1}
-  critColor: {r: 0.9622642, g: 0.6476451, b: 0.25872195, a: 1}
-  offset: {x: 0, y: 2, z: 0}
+  offset: {x: 0, y: -100, z: 0}
 --- !u!114 &114953673228281364
 MonoBehaviour:
   m_ObjectHideFlags: 1
