@@ -35,11 +35,11 @@ public class PlayerController : MonoBehaviour
         {
             ProcessInteraction();
         }
-        else if(Input.GetMouseButton(0)) 
+        else if(Input.GetMouseButton(3)) 
         {
             ProcessMovement();
         }
-        else if(Input.GetMouseButtonUp(0))
+        else if(Input.GetMouseButtonUp(3))
         {
             motor.StopMoving();
         }   
@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 closestEnemy = enemy;
             }
         }
-
+         
         if(closestEnemy != null)
         {
             SetFocus(closestEnemy);
