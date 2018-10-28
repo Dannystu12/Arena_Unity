@@ -30,6 +30,12 @@ public class PlayerController : MonoBehaviour
             FocusNextTarget();
         }
 
+        if(Mathf.Abs(Input.GetAxis("Vertical")) > Mathf.Epsilon)
+        {
+            motor.Move(Input.GetAxis("Vertical"));
+        }
+
+
 
         if(Input.GetMouseButtonDown(1))
         {
@@ -42,7 +48,7 @@ public class PlayerController : MonoBehaviour
         else if(Input.GetMouseButtonUp(3))
         {
             motor.StopMoving();
-        }   
+        }
     }
 
     private void FocusNextTarget()

@@ -6,9 +6,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Vector3 targetOffset = new Vector3(0f, 5f, 0f);
-    private float distance = 10.0f;
-    private float currentX = 0f;
-    private float currentY = 0f;
     [SerializeField] Vector3 offset = new Vector3(0.0f, 250f, 0.0f); 
     [SerializeField] float sensitivityX = 4.0f;
     [SerializeField] float sensitivityY = 1.0f;
@@ -20,7 +17,11 @@ public class CameraController : MonoBehaviour
 
     private Camera cam;
     private Transform camTransform;
-   
+    private PlayerMotor playerMotor;
+    private float distance;
+    private float currentX;
+    private float currentY;
+
 
 
     void Start()
@@ -31,7 +32,7 @@ public class CameraController : MonoBehaviour
         currentX = angles.x;
         currentY = (yAngleMin + yAngleMax) / 2;
         distance = (minDistance + maxDistance) / 2;
-
+        playerMotor = FindObjectOfType<PlayerMotor>();
     }
 
     private void Update()
@@ -49,6 +50,7 @@ public class CameraController : MonoBehaviour
         else if(Mathf.Abs(Input.GetAxis("Horizontal")) > Mathf.Epsilon)
         {
             currentX += Input.GetAxis("Horizontal");
+            playerMotor.Rotate(Input.GetAxis("Horizontal"));
         }
        
 

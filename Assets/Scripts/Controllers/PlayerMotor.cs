@@ -5,13 +5,17 @@ public class PlayerMotor : MonoBehaviour {
 
     [SerializeField] float stoppingDistanceFactor = 0.9f;
     [SerializeField] float lookSpeed = 5f;
+    [SerializeField] float moveSpeed = 1f;
 
     private NavMeshAgent agent;
     private Transform target;
+    private float currentX;
 
 	// Use this for initialization
 	void Start () {
         agent = GetComponent<NavMeshAgent>();
+        Vector3 angles = transform.eulerAngles;
+        currentX = angles.x;
 	}
 	
     void Update()
@@ -22,6 +26,13 @@ public class PlayerMotor : MonoBehaviour {
             FaceTarget();
         }
     }
+
+
+    public void Move(float moveAmount)
+    {
+        agent.Move(transform.forward * moveSpeed * moveAmount);
+    }
+
 
 
 	public void MoveToPoint(Vector3 point)
@@ -45,7 +56,7 @@ public class PlayerMotor : MonoBehaviour {
     public void  StopFollowingTarget()
     {
         agent.updateRotation = true;
-        agent.stoppingDistance = 0;
+        agent.stoppingDistance = 0; 
         target = null;
     }
 
@@ -54,5 +65,13 @@ public class PlayerMotor : MonoBehaviour {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookSpeed);
+    }
+     
+    public void Rotate(float yRotation)
+    {
+        currentX += yRotation;
+        Quaternion rotation = Quaternion.Euler(0, currentX, 0);
+        transform.rotation = rotation;
+
     }
 }
