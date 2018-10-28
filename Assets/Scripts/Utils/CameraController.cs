@@ -46,6 +46,16 @@ public class CameraController : MonoBehaviour
 
 
         }
+        else if(Mathf.Abs(Input.GetAxis("Horizontal")) > Mathf.Epsilon)
+        {
+            currentX += Input.GetAxis("Horizontal");
+        }
+       
+
+
+
+
+
 
         distance += -(Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime) * zoomRate * Mathf.Abs(distance);
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
