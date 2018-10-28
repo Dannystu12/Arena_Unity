@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] Vector3 targetOffset = new Vector3(0f, 5f, 0f);
-    [SerializeField] float distance = 10.0f;
+    private float distance = 10.0f;
     private float currentX = 0f;
     private float currentY = 0f;
     [SerializeField] Vector3 offset = new Vector3(0.0f, 250f, 0.0f); 
@@ -27,9 +27,11 @@ public class CameraController : MonoBehaviour
     {
         camTransform = transform;
         cam = Camera.main;
-        Vector3 angles = transform.eulerAngles;
+        Vector3 angles = target.eulerAngles;
         currentX = angles.x;
-        currentY = angles.y;
+        currentY = (yAngleMin + yAngleMax) / 2;
+        distance = (minDistance + maxDistance) / 2;
+
     }
 
     private void Update()
