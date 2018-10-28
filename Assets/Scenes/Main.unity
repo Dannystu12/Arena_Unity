@@ -855,7 +855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1254346747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -931,7 +931,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ae4e0237ed2eeb745a0822a2e51ac7f9, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e9ebdeaa601afbc46b5163b31f5ec541, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.472
   m_Pitch: 1
@@ -1163,14 +1163,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 508433185}
-  offset: {x: -14.88, y: -19.42, z: -9.78}
-  pitch: 3.44
-  zoomSpeed: 4
-  minZoom: 15
-  maxZoom: 28
-  currentZoom: 20
-  yawSpeed: 100
-  currentYaw: 0
+  targetOffset: {x: 0, y: 5, z: 0}
+  distance: 300
+  offset: {x: 0, y: 41, z: 0}
+  sensitivityX: 4
+  sensitivityY: 1
+  yAngleMin: 0
+  yAngleMax: 80
+  zoomRate: 20
+  minDistance: 100
+  maxDistance: 300
 --- !u!1001 &1697827558
 Prefab:
   m_ObjectHideFlags: 0
@@ -1209,6 +1211,10 @@ Prefab:
     - target: {fileID: 4679237913273448, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1215497732331664, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c97e4770b182a2498c41f8df21f8620, type: 2}
