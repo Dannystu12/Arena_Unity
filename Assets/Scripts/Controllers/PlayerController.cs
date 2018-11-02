@@ -34,6 +34,10 @@ public class PlayerController : MonoBehaviour
         {
             motor.Move(Input.GetAxis("Vertical"));
         }
+        else
+        {
+            motor.StopMoving();
+        }
 
 
 

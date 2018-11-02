@@ -468,7 +468,7 @@ GameObject:
   - component: {fileID: 114953673228281364}
   - component: {fileID: 114628743614451346}
   - component: {fileID: 82767230317839532}
-  - component: {fileID: 54018192609580020}
+  - component: {fileID: 54274901998784460}
   m_Layer: 2
   m_Name: Player
   m_TagString: Untagged
@@ -3503,8 +3503,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1158607586763022}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.566475, y: -3.9, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 92.62566, y: -328.50412, z: 104.99456}
   m_LocalScale: {x: 512, y: 512, z: 512}
   m_Children:
   - {fileID: 4909878290062542}
@@ -5312,7 +5312,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1214015303487722}
   m_Mesh: {fileID: 4300000, guid: 74bf8be0b7579a7498081ac240206e74, type: 3}
---- !u!54 &54018192609580020
+--- !u!54 &54274901998784460
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5325,7 +5325,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!82 &82767230317839532
 AudioSource:
@@ -5505,6 +5505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stoppingDistanceFactor: 0.9
   lookSpeed: 5
+  moveSpeed: 1
 --- !u!114 &114341590765984896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6262,7 +6263,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.12
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!198 &198239568314331926
 ParticleSystem:

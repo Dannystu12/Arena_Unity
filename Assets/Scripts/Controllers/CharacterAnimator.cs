@@ -43,11 +43,12 @@ public class CharacterAnimator : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        float speedPercent = agent.velocity.magnitude / agent.speed;
+        //float speedPercent = agent.velocity.magnitude / agent.speed;
+        float speedPercent = agent.isStopped ? 0 : 1;
         animator.SetFloat("speedPercent", speedPercent, locomotionSmoothTime, Time.deltaTime);
         animator.SetBool("inCombat", combat.InCombat);
     }
-
+     
     protected virtual void OnAttack()
     {
         animator.SetTrigger("attack");

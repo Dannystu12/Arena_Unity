@@ -30,7 +30,9 @@ public class PlayerMotor : MonoBehaviour {
 
     public void Move(float moveAmount)
     {
-        agent.Move(transform.forward * moveSpeed * moveAmount);
+        agent.isStopped = false;
+        Vector3 motionVector = transform.forward * moveSpeed * moveAmount;
+        agent.Move(motionVector);
     }
 
 
@@ -41,7 +43,7 @@ public class PlayerMotor : MonoBehaviour {
         agent.SetDestination(point);
     }
 
-    public void StopMoving()
+    public void StopMoving() 
     {
         agent.isStopped = true;
     }
