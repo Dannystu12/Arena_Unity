@@ -23,39 +23,22 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
-        if (thisCharacter.IsDead()) return;
 
-        if(Input.GetKeyDown(KeyCode.Tab))
-        {
-            FocusNextTarget();
-        }
-
-        if(Mathf.Abs(Input.GetAxis("Vertical")) > Mathf.Epsilon)
-        {
-            motor.Move(Input.GetAxis("Vertical"));
-        }
-        else
-        {
-            motor.StopMoving();
-        }
-
-
-
-        if(Input.GetMouseButtonDown(1))
-        {
-            ProcessInteraction();
-        }
-        else if(Input.GetMouseButton(3)) 
-        {
-            ProcessMovement();
-        }
-        else if(Input.GetMouseButtonUp(3))
-        {
-            motor.StopMoving();
-        }
+        //if(Input.GetMouseButtonDown(1))
+        //{
+        //    ProcessInteraction();
+        //}
+        //else if(Input.GetMouseButton(3)) 
+        //{
+        //    ProcessMovement();
+        //}
+        //else if(Input.GetMouseButtonUp(3))
+        //{
+        //    motor.StopMoving();
+        //}
     }
 
-    private void FocusNextTarget()
+    public void FocusNextTarget()
     {
         EnemyInteractable[] enemies = FindObjectsOfType<EnemyInteractable>();
 
@@ -124,5 +107,25 @@ public class PlayerController : MonoBehaviour
         if(focus != null) focus.OnDefocused();
         motor.StopFollowingTarget(); 
         focus = null;
+    }
+
+    public bool IsDead()
+    {
+        return thisCharacter.IsDead();
+    }
+
+    public void Move(float moveAmount)
+    {
+        motor.Move(moveAmount);
+    }
+
+    public void StopMoving()
+    {
+        motor.StopMoving();
+    }
+
+    public void Rotate(float amount)
+    {
+        motor.Rotate(amount);
     }
 }

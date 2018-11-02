@@ -17,7 +17,6 @@ public class CameraController : MonoBehaviour
 
     private Camera cam;
     private Transform camTransform;
-    private PlayerMotor playerMotor;
     private float distance;
     private float currentX;
     private float currentY;
@@ -32,34 +31,32 @@ public class CameraController : MonoBehaviour
         currentX = angles.x;
         currentY = (yAngleMin + yAngleMax) / 2;
         distance = (minDistance + maxDistance) / 2;
-        playerMotor = FindObjectOfType<PlayerMotor>();
     }
 
     private void Update()
     {
+    }
+
+    public void UpdateRotation(float x, float y)
+    {
+        currentX += x;
+        currentY -= y;
+        currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
+    }
+
+    public void UpdateDistance(float amount)
+    {
+        distance += -(amount * Time.deltaTime) * zoomRate * Mathf.Abs(distance);
+    }
+
+    public void Rotate(float amount)
+    {
+        currentX += amount;
+    }
+
+    void LateUpdate()
+    {
         transform.position = target.position;
-        if(Input.GetMouseButton(0))
-        {
-            
-            currentX += Input.GetAxis("Mouse X");
-            currentY -= Input.GetAxis("Mouse Y");
-            currentY = Mathf.Clamp(currentY, yAngleMin, yAngleMax);
-
-
-        }
-        else if(Mathf.Abs(Input.GetAxis("Horizontal")) > Mathf.Epsilon)
-        {
-            currentX += Input.GetAxis("Horizontal");
-            playerMotor.Rotate(Input.GetAxis("Horizontal"));
-        }
-       
-
-
-
-
-
-
-        distance += -(Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime) * zoomRate * Mathf.Abs(distance);
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
 
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
@@ -67,19 +64,6 @@ public class CameraController : MonoBehaviour
 
         transform.rotation = rotation;
         transform.position = position + offset;
-
-
-         
-
-    }
-
-
-    void LateUpdate()
-    {
-        //Vector3 dir = new Vector3(0, 0, -distance);
-        //Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        //camTransform.position = target.position + targetOffset + rotation * dir;
-        //camTransform.LookAt(target.position);
     }
 } 
 
