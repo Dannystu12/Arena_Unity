@@ -7,6 +7,7 @@ public class PlayerMotor : MonoBehaviour {
     [SerializeField] float lookSpeed = 5f;
     [SerializeField] float moveSpeed = 1f;
 
+
     private NavMeshAgent agent;
     private Transform target;
     private float currentX;

@@ -1,0 +1,787 @@
+fileFormatVersion: 2
+guid: 8958c64e1d1bfed4db07e51e601b9ac3
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bodymodel1FinalRig:Head
+    100002: Bodymodel1FinalRig:Head_1
+    100004: Bodymodel1FinalRig:HeadCtrl
+    100006: Bodymodel1FinalRig:Hip
+    100008: Bodymodel1FinalRig:L_ArmFingerIndex_1
+    100010: Bodymodel1FinalRig:L_ArmFingerIndex_2
+    100012: Bodymodel1FinalRig:L_ArmFingerIndex_3
+    100014: Bodymodel1FinalRig:L_ArmFingerMid_1
+    100016: Bodymodel1FinalRig:L_ArmFingerMid_2
+    100018: Bodymodel1FinalRig:L_ArmFingerMid_3
+    100020: Bodymodel1FinalRig:L_ArmFingerPinky_1
+    100022: Bodymodel1FinalRig:L_ArmFingerPinky_2
+    100024: Bodymodel1FinalRig:L_ArmFingerPinky_3
+    100026: Bodymodel1FinalRig:L_ArmFingerRing_1
+    100028: Bodymodel1FinalRig:L_ArmFingerRing_2
+    100030: Bodymodel1FinalRig:L_ArmFingerRing_3
+    100032: Bodymodel1FinalRig:L_ArmFore
+    100034: Bodymodel1FinalRig:L_ArmHand
+    100036: Bodymodel1FinalRig:L_ArmThumb_1
+    100038: Bodymodel1FinalRig:L_ArmThumb_2
+    100040: Bodymodel1FinalRig:L_ArmThumb_3
+    100042: Bodymodel1FinalRig:L_ArmUpper
+    100044: Bodymodel1FinalRig:L_Clavicle
+    100046: Bodymodel1FinalRig:L_FootCtrl1
+    100048: Bodymodel1FinalRig:L_FootIK
+    100050: Bodymodel1FinalRig:L_LegFoot
+    100052: Bodymodel1FinalRig:L_LegLower
+    100054: Bodymodel1FinalRig:L_LegToeEnd
+    100056: Bodymodel1FinalRig:L_LegToes
+    100058: Bodymodel1FinalRig:L_LegTop
+    100060: Bodymodel1FinalRig:L_ShoulderCtrl
+    100062: Bodymodel1FinalRig:Neck
+    100064: Bodymodel1FinalRig:NeckCtrl
+    100066: Bodymodel1FinalRig:nurbsCircle1
+    100068: Bodymodel1FinalRig:P_Body_Chest2
+    100070: Bodymodel1FinalRig:polySurface3
+    100072: Bodymodel1FinalRig:R_ArmFingerIndex_1
+    100074: Bodymodel1FinalRig:R_ArmFingerIndex_2
+    100076: Bodymodel1FinalRig:R_ArmFingerIndex_3
+    100078: Bodymodel1FinalRig:R_ArmFingerMid_1
+    100080: Bodymodel1FinalRig:R_ArmFingerMid_2
+    100082: Bodymodel1FinalRig:R_ArmFingerMid_3
+    100084: Bodymodel1FinalRig:R_ArmFingerPinky_1
+    100086: Bodymodel1FinalRig:R_ArmFingerPinky_2
+    100088: Bodymodel1FinalRig:R_ArmFingerPinky_3
+    100090: Bodymodel1FinalRig:R_ArmFingerRing_1
+    100092: Bodymodel1FinalRig:R_ArmFingerRing_2
+    100094: Bodymodel1FinalRig:R_ArmFingerRing_3
+    100096: Bodymodel1FinalRig:R_ArmFore
+    100098: Bodymodel1FinalRig:R_ArmHand
+    100100: Bodymodel1FinalRig:R_ArmThumb_1
+    100102: Bodymodel1FinalRig:R_ArmThumb_2
+    100104: Bodymodel1FinalRig:R_ArmThumb_3
+    100106: Bodymodel1FinalRig:R_ArmUpper
+    100108: Bodymodel1FinalRig:R_Clavicle
+    100110: Bodymodel1FinalRig:R_FootCtrl
+    100112: Bodymodel1FinalRig:R_FootIK
+    100114: Bodymodel1FinalRig:R_LegFoot
+    100116: Bodymodel1FinalRig:R_LegLower
+    100118: Bodymodel1FinalRig:R_LegToeEnd
+    100120: Bodymodel1FinalRig:R_LegToes
+    100122: Bodymodel1FinalRig:R_LegTop
+    100124: Bodymodel1FinalRig:R_ShoulderCtrl
+    100126: Bodymodel1FinalRig:Spine_1
+    100128: Bodymodel1FinalRig:Spine_2
+    100130: Bodymodel1FinalRig:Spine_3
+    100132: Bodymodel1FinalRig:transform1
+    100134: Bodymodel1FinalRig:transform2
+    100136: CharBody
+    100138: CharLegs
+    100140: ChestPlateBot
+    100142: ChestPlateTop
+    100144: Helm
+    100146: HipCtrl
+    100148: L_FootToeCtrl
+    100150: L_ShoulderPad
+    100152: LegPlates
+    100154: LHandCtrl
+    100156: LLarmCtrl
+    100158: LUArmCtrl
+    100160: nurbsCircle1
+    100162: nurbsCircle2
+    100164: pCube191
+    100166: R_FootToeCtrl1
+    100168: R_ShoulderPad
+    100170: RHandCtrl
+    100172: RLArmCtrl
+    100174: RUArmCtrl
+    100176: WaistCtrl
+    100178: WaistPlateFrnt
+    100180: WaistPlateLeft
+    100182: WaistPlateRight
+    100184: //RootNode
+    400000: Bodymodel1FinalRig:Head
+    400002: Bodymodel1FinalRig:Head_1
+    400004: Bodymodel1FinalRig:HeadCtrl
+    400006: Bodymodel1FinalRig:Hip
+    400008: Bodymodel1FinalRig:L_ArmFingerIndex_1
+    400010: Bodymodel1FinalRig:L_ArmFingerIndex_2
+    400012: Bodymodel1FinalRig:L_ArmFingerIndex_3
+    400014: Bodymodel1FinalRig:L_ArmFingerMid_1
+    400016: Bodymodel1FinalRig:L_ArmFingerMid_2
+    400018: Bodymodel1FinalRig:L_ArmFingerMid_3
+    400020: Bodymodel1FinalRig:L_ArmFingerPinky_1
+    400022: Bodymodel1FinalRig:L_ArmFingerPinky_2
+    400024: Bodymodel1FinalRig:L_ArmFingerPinky_3
+    400026: Bodymodel1FinalRig:L_ArmFingerRing_1
+    400028: Bodymodel1FinalRig:L_ArmFingerRing_2
+    400030: Bodymodel1FinalRig:L_ArmFingerRing_3
+    400032: Bodymodel1FinalRig:L_ArmFore
+    400034: Bodymodel1FinalRig:L_ArmHand
+    400036: Bodymodel1FinalRig:L_ArmThumb_1
+    400038: Bodymodel1FinalRig:L_ArmThumb_2
+    400040: Bodymodel1FinalRig:L_ArmThumb_3
+    400042: Bodymodel1FinalRig:L_ArmUpper
+    400044: Bodymodel1FinalRig:L_Clavicle
+    400046: Bodymodel1FinalRig:L_FootCtrl1
+    400048: Bodymodel1FinalRig:L_FootIK
+    400050: Bodymodel1FinalRig:L_LegFoot
+    400052: Bodymodel1FinalRig:L_LegLower
+    400054: Bodymodel1FinalRig:L_LegToeEnd
+    400056: Bodymodel1FinalRig:L_LegToes
+    400058: Bodymodel1FinalRig:L_LegTop
+    400060: Bodymodel1FinalRig:L_ShoulderCtrl
+    400062: Bodymodel1FinalRig:Neck
+    400064: Bodymodel1FinalRig:NeckCtrl
+    400066: Bodymodel1FinalRig:nurbsCircle1
+    400068: Bodymodel1FinalRig:P_Body_Chest2
+    400070: Bodymodel1FinalRig:polySurface3
+    400072: Bodymodel1FinalRig:R_ArmFingerIndex_1
+    400074: Bodymodel1FinalRig:R_ArmFingerIndex_2
+    400076: Bodymodel1FinalRig:R_ArmFingerIndex_3
+    400078: Bodymodel1FinalRig:R_ArmFingerMid_1
+    400080: Bodymodel1FinalRig:R_ArmFingerMid_2
+    400082: Bodymodel1FinalRig:R_ArmFingerMid_3
+    400084: Bodymodel1FinalRig:R_ArmFingerPinky_1
+    400086: Bodymodel1FinalRig:R_ArmFingerPinky_2
+    400088: Bodymodel1FinalRig:R_ArmFingerPinky_3
+    400090: Bodymodel1FinalRig:R_ArmFingerRing_1
+    400092: Bodymodel1FinalRig:R_ArmFingerRing_2
+    400094: Bodymodel1FinalRig:R_ArmFingerRing_3
+    400096: Bodymodel1FinalRig:R_ArmFore
+    400098: Bodymodel1FinalRig:R_ArmHand
+    400100: Bodymodel1FinalRig:R_ArmThumb_1
+    400102: Bodymodel1FinalRig:R_ArmThumb_2
+    400104: Bodymodel1FinalRig:R_ArmThumb_3
+    400106: Bodymodel1FinalRig:R_ArmUpper
+    400108: Bodymodel1FinalRig:R_Clavicle
+    400110: Bodymodel1FinalRig:R_FootCtrl
+    400112: Bodymodel1FinalRig:R_FootIK
+    400114: Bodymodel1FinalRig:R_LegFoot
+    400116: Bodymodel1FinalRig:R_LegLower
+    400118: Bodymodel1FinalRig:R_LegToeEnd
+    400120: Bodymodel1FinalRig:R_LegToes
+    400122: Bodymodel1FinalRig:R_LegTop
+    400124: Bodymodel1FinalRig:R_ShoulderCtrl
+    400126: Bodymodel1FinalRig:Spine_1
+    400128: Bodymodel1FinalRig:Spine_2
+    400130: Bodymodel1FinalRig:Spine_3
+    400132: Bodymodel1FinalRig:transform1
+    400134: Bodymodel1FinalRig:transform2
+    400136: CharBody
+    400138: CharLegs
+    400140: ChestPlateBot
+    400142: ChestPlateTop
+    400144: Helm
+    400146: HipCtrl
+    400148: L_FootToeCtrl
+    400150: L_ShoulderPad
+    400152: LegPlates
+    400154: LHandCtrl
+    400156: LLarmCtrl
+    400158: LUArmCtrl
+    400160: nurbsCircle1
+    400162: nurbsCircle2
+    400164: pCube191
+    400166: R_FootToeCtrl1
+    400168: R_ShoulderPad
+    400170: RHandCtrl
+    400172: RLArmCtrl
+    400174: RUArmCtrl
+    400176: WaistCtrl
+    400178: WaistPlateFrnt
+    400180: WaistPlateLeft
+    400182: WaistPlateRight
+    400184: //RootNode
+    2100000: Bodymodel1FinalRig_lambert8
+    2100002: Bodymodel1FinalRig_lambert4
+    2100004: lambert9
+    2100006: Bodymodel1FinalRig_lambert5
+    2100008: Bodymodel1FinalRig_phong1
+    2100010: Bodymodel1FinalRig_phongE1
+    2100012: Bodymodel1FinalRig_lambert6
+    2100014: Bodymodel1FinalRig_lambert7
+    2100016: lambert6
+    2100018: anisotropic1
+    2100020: Bodymodel1FinalRig_lambert3
+    2300000: ChestPlateBot
+    2300002: ChestPlateTop
+    2300004: Helm
+    2300006: L_ShoulderPad
+    2300008: pCube191
+    2300010: R_ShoulderPad
+    2300012: WaistPlateFrnt
+    2300014: WaistPlateLeft
+    2300016: WaistPlateRight
+    3300000: ChestPlateBot
+    3300002: ChestPlateTop
+    3300004: Helm
+    3300006: L_ShoulderPad
+    3300008: pCube191
+    3300010: R_ShoulderPad
+    3300012: WaistPlateFrnt
+    3300014: WaistPlateLeft
+    3300016: WaistPlateRight
+    4300000: CharBody
+    4300002: LegPlates
+    4300004: CharLegs
+    4300006: R_ShoulderPad
+    4300008: pCube191
+    4300010: Helm
+    4300012: ChestPlateTop
+    4300014: ChestPlateBot
+    4300016: WaistPlateFrnt
+    4300018: WaistPlateRight
+    4300020: WaistPlateLeft
+    4300022: L_ShoulderPad
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: CharBody
+    13700002: CharLegs
+    13700004: LegPlates
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton:
+    - name: Warrior_Model_1.0(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_FootIK
+      parentName: Warrior_Model_1.0(Clone)
+      position: {x: -0.72622466, y: 0.35872597, z: -0.460673}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:nurbsCircle1
+      parentName: Warrior_Model_1.0(Clone)
+      position: {x: -0.2765431, y: 0.0023278366, z: -0.49263987}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_FootCtrl1
+      parentName: Bodymodel1FinalRig:nurbsCircle1
+      position: {x: -0.4496815, y: 0.3563981, z: 0.031966873}
+      rotation: {x: -0.02425284, y: -0.049297214, z: -0.005193069, w: 0.99847615}
+      scale: {x: 1, y: 1, z: 1}
+    - name: L_FootToeCtrl
+      parentName: Bodymodel1FinalRig:L_FootCtrl1
+      position: {x: -0.02407024, y: -0.32048845, z: 0.49480835}
+      rotation: {x: 0, y: -0.03627596, z: -0, w: 0.99934185}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:R_FootCtrl
+      parentName: Bodymodel1FinalRig:nurbsCircle1
+      position: {x: 0.1878204, y: 0.4047751, z: -0.4573935}
+      rotation: {x: 0, y: 0.087139726, z: -0, w: 0.9961961}
+      scale: {x: 1, y: 1, z: 1}
+    - name: R_FootToeCtrl1
+      parentName: Bodymodel1FinalRig:R_FootCtrl
+      position: {x: 0.02393097, y: -0.35566744, z: 0.5688592}
+      rotation: {x: -0.15129934, y: 0.028842892, z: 0.0010893107, w: 0.98806655}
+      scale: {x: 1, y: 1, z: 1}
+    - name: HipCtrl
+      parentName: Bodymodel1FinalRig:nurbsCircle1
+      position: {x: -0.07066816, y: 2.361529, z: -0.030251056}
+      rotation: {x: 0.031030705, y: -0, z: -0, w: 0.99951845}
+      scale: {x: 1, y: 1, z: 1}
+    - name: ChestPlateBot
+      parentName: HipCtrl
+      position: {x: -0.00000003505111, y: 0.24845344, z: -0.027556797}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.5544407, y: 0.31089535, z: 1.2220713}
+    - name: WaistCtrl
+      parentName: HipCtrl
+      position: {x: -0.0007244873, y: 0.49737582, z: -0.020967964}
+      rotation: {x: 0.008974396, y: 0.0000076606375, z: -0.000008291139, w: 0.99995977}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_ShoulderCtrl
+      parentName: WaistCtrl
+      position: {x: -0.265798, y: 0.66941375, z: 0.09746535}
+      rotation: {x: -0.07375284, y: 0.074459136, z: -0.67715865, w: 0.72833544}
+      scale: {x: 0.6321179, y: 0.6321179, z: 1.4211723}
+    - name: Bodymodel1FinalRig:NeckCtrl
+      parentName: WaistCtrl
+      position: {x: 0.03377389, y: 0.7187069, z: 0.009476239}
+      rotation: {x: -0.14412217, y: -0.007765832, z: -0.00046433572, w: 0.9895294}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:HeadCtrl
+      parentName: Bodymodel1FinalRig:NeckCtrl
+      position: {x: -0.0046603987, y: 0.28285304, z: 0.10009688}
+      rotation: {x: 0.008086035, y: 0.028484767, z: -0.7095356, w: 0.7040472}
+      scale: {x: 2.4772034, y: 2.4772034, z: 2.4772034}
+    - name: Helm
+      parentName: Bodymodel1FinalRig:HeadCtrl
+      position: {x: -0.07297696, y: -0.001982239, z: 0.037207596}
+      rotation: {x: -0.43316868, y: 0.55882275, z: 0.5587193, w: 0.43349138}
+      scale: {x: 19.445963, y: 20.748722, z: 16.850199}
+    - name: Bodymodel1FinalRig:R_ShoulderCtrl
+      parentName: WaistCtrl
+      position: {x: 0.33427554, y: 0.6521678, z: 0.09756079}
+      rotation: {x: -0.032640744, y: 0.057650786, z: -0.75827795, w: 0.64855653}
+      scale: {x: 0.6321179, y: 0.6321179, z: 1.4211723}
+    - name: ChestPlateTop
+      parentName: WaistCtrl
+      position: {x: 0.00072445226, y: 0.15630451, z: -0.0063312124}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.7916161, y: 0.31089535, z: 1.4925596}
+    - name: LUArmCtrl
+      parentName: WaistCtrl
+      position: {x: -0.65311, y: 0.62194717, z: 0.16493994}
+      rotation: {x: -0.0050021135, y: 0.042746983, z: 0.010570852, w: 0.9990175}
+      scale: {x: 50.35583, y: 50.35583, z: 50.35583}
+    - name: LLarmCtrl
+      parentName: LUArmCtrl
+      position: {x: -0.0025835668, y: -0.011900059, z: -0.0042802324}
+      rotation: {x: -0.18465324, y: -0.12750345, z: -0.08304865, w: 0.97095263}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LHandCtrl
+      parentName: LLarmCtrl
+      position: {x: -0.0034688076, y: -0.012287997, z: -0.00046526795}
+      rotation: {x: -0.032438517, y: 0.2526633, z: 0.063423604, w: 0.9649282}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RUArmCtrl
+      parentName: WaistCtrl
+      position: {x: 0.63684815, y: 0.62391937, z: -0.05829834}
+      rotation: {x: -0.06820001, y: -0.020595843, z: 0.009977199, w: 0.99740916}
+      scale: {x: 50.35583, y: 50.35583, z: 50.35583}
+    - name: RLArmCtrl
+      parentName: RUArmCtrl
+      position: {x: 0.0030766323, y: -0.011929325, z: -0.0038511574}
+      rotation: {x: -0.15831067, y: -0.08437322, z: 0.074657895, w: 0.98094094}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RHandCtrl
+      parentName: RLArmCtrl
+      position: {x: 0.004612014, y: -0.015052497, z: -0.000059585713}
+      rotation: {x: 0.30837557, y: -0.03522333, z: -0.0832362, w: 0.9469612}
+      scale: {x: 1, y: 1, z: 1}
+    - name: pCube191
+      parentName: RHandCtrl
+      position: {x: -0.0002576792, y: -0.004879615, z: -0.0013720815}
+      rotation: {x: 0.056160737, y: 0.2084399, z: -0.5210611, w: 0.8257688}
+      scale: {x: 0.26269272, y: 0.26269272, z: 1.3836378}
+    - name: WaistPlateFrnt
+      parentName: HipCtrl
+      position: {x: -0.0072639817, y: 0.1874413, z: 0.25668833}
+      rotation: {x: 0.014527885, y: -0, z: -0, w: 0.9998945}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WaistPlateLeft
+      parentName: HipCtrl
+      position: {x: -0.41097903, y: 0.12722561, z: 0.0270073}
+      rotation: {x: 0.014527885, y: -0, z: -0, w: 0.9998945}
+      scale: {x: 1, y: 1, z: 1}
+    - name: WaistPlateRight
+      parentName: HipCtrl
+      position: {x: 0.3593098, y: 0.1307423, z: 0.027109513}
+      rotation: {x: 0.014527885, y: -0, z: -0, w: 0.9998945}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:Hip
+      parentName: HipCtrl
+      position: {x: 0.3464683, y: 0.107000366, z: 0.47336534}
+      rotation: {x: 0.0067592436, y: -0.9992931, z: 0.025744896, w: -0.02654925}
+      scale: {x: 1, y: 0.99999964, z: 0.9999996}
+    - name: Bodymodel1FinalRig:L_LegTop
+      parentName: Bodymodel1FinalRig:Hip
+      position: {x: 0.26490283, y: -0.24017929, z: -0.04630988}
+      rotation: {x: 0.3859389, y: 0.5716896, z: 0.5563056, w: 0.46340722}
+      scale: {x: 1.000003, y: 1.0000021, z: 1.0000021}
+    - name: Bodymodel1FinalRig:L_LegLower
+      parentName: Bodymodel1FinalRig:L_LegTop
+      position: {x: -0.8857161, y: -4.2632563e-16, z: -1.4210854e-16}
+      rotation: {x: 0.042519692, y: -0.025882678, z: 0.12767108, w: 0.9905667}
+      scale: {x: 1.0000015, y: 1.000002, z: 1.0000019}
+    - name: Bodymodel1FinalRig:L_LegFoot
+      parentName: Bodymodel1FinalRig:L_LegLower
+      position: {x: -0.97930545, y: 2.346756e-16, z: -2.8604544e-16}
+      rotation: {x: 0.84273624, y: 0.30293152, z: 0.079400524, w: 0.43786263}
+      scale: {x: 0.99999976, y: 1.0000001, z: 0.9999999}
+    - name: Bodymodel1FinalRig:L_LegToes
+      parentName: Bodymodel1FinalRig:L_LegFoot
+      position: {x: -0.47642565, y: -0.09370119, z: -0.002164186}
+      rotation: {x: -0.0074360613, y: 0.0013222299, z: -0.35630533, w: 0.9343391}
+      scale: {x: 1.0000024, y: 0.99999976, z: 1.0000014}
+    - name: Bodymodel1FinalRig:L_LegToeEnd
+      parentName: Bodymodel1FinalRig:L_LegToes
+      position: {x: -0.31407565, y: -5.32907e-16, z: 7.105427e-16}
+      rotation: {x: 1.0963452e-15, y: -4.8734888e-17, z: 8.500145e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:R_LegTop
+      parentName: Bodymodel1FinalRig:Hip
+      position: {x: -0.26550388, y: -0.24017975, z: -0.046309784}
+      rotation: {x: 0.53353506, y: 0.45468196, z: 0.40783757, w: 0.5850413}
+      scale: {x: 1.000001, y: 1.0000008, z: 1.0000014}
+    - name: Bodymodel1FinalRig:R_LegLower
+      parentName: Bodymodel1FinalRig:R_LegTop
+      position: {x: -0.8854959, y: -6.0396133e-16, z: -5.684342e-16}
+      rotation: {x: 0.022060508, y: 0.022545138, z: 0.115208924, w: 0.9928404}
+      scale: {x: 1.000001, y: 1.0000017, z: 1.000001}
+    - name: Bodymodel1FinalRig:R_LegFoot
+      parentName: Bodymodel1FinalRig:R_LegLower
+      position: {x: -0.97930473, y: -6.0396133e-16, z: -4.2632563e-16}
+      rotation: {x: -0.86099094, y: -0.26656786, z: 0.09315575, w: 0.42303455}
+      scale: {x: 1.0000011, y: 0.9999999, z: 1.0000007}
+    - name: Bodymodel1FinalRig:R_LegToes
+      parentName: Bodymodel1FinalRig:R_LegFoot
+      position: {x: -0.36777377, y: -0.04407025, z: 0.011763724}
+      rotation: {x: 0.01268783, y: 0.012451217, z: -0.3561574, w: 0.9342569}
+      scale: {x: 0.9999995, y: 1.0000005, z: 1.0000006}
+    - name: Bodymodel1FinalRig:R_LegToeEnd
+      parentName: Bodymodel1FinalRig:R_LegToes
+      position: {x: -0.3046871, y: 0.051794752, z: 0.0043037115}
+      rotation: {x: -0.000000052154057, y: 0.000000043772157, z: -0.08666974, w: 0.99623716}
+      scale: {x: 1.0000012, y: 1, z: 1.000001}
+    - name: Bodymodel1FinalRig:Spine_1
+      parentName: Bodymodel1FinalRig:Hip
+      position: {x: -0.0005155809, y: 0.13361365, z: 3.9884762e-16}
+      rotation: {x: 0.49117205, y: -0.50867486, z: -0.49117205, w: 0.50867474}
+      scale: {x: 1.0000015, y: 1.0000013, z: 1.0000008}
+    - name: Bodymodel1FinalRig:Spine_2
+      parentName: Bodymodel1FinalRig:Spine_1
+      position: {x: -0.36430365, y: -0.00036683574, z: 0.000008254898}
+      rotation: {x: -0.000000029802319, y: 0.000000029802319, z: 0.06053876, w: 0.9981659}
+      scale: {x: 1.0000006, y: 1.0000006, z: 0.99999994}
+    - name: Bodymodel1FinalRig:Spine_3
+      parentName: Bodymodel1FinalRig:Spine_2
+      position: {x: -0.44500583, y: 1.4210854e-16, z: 5.612177e-16}
+      rotation: {x: -0.000000040167404, y: -0.00000007901002, z: 0.20634721, w: -0.97847885}
+      scale: {x: 1.0000007, y: 1.0000008, z: 1.0000007}
+    - name: Bodymodel1FinalRig:Neck
+      parentName: Bodymodel1FinalRig:Spine_3
+      position: {x: -0.2867165, y: -0.008066948, z: -0.033451844}
+      rotation: {x: -0.013750928, y: -0.0050171725, z: -0.090196036, w: 0.9958165}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000002}
+    - name: Bodymodel1FinalRig:Head
+      parentName: Bodymodel1FinalRig:Neck
+      position: {x: -0.2978773, y: -0.035483595, z: 0.0075502917}
+      rotation: {x: 0.030554133, y: 0.006411658, z: 0.06099635, w: 0.99764967}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:Head_1
+      parentName: Bodymodel1FinalRig:Head
+      position: {x: -0.79797894, y: 0.00010720595, z: 0.0018116545}
+      rotation: {x: 1, y: 0, z: -0, w: 7.2736614e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_Clavicle
+      parentName: Bodymodel1FinalRig:Spine_3
+      position: {x: -0.24696748, y: 0.0947906, z: -0.33399788}
+      rotation: {x: 0.5416989, y: -0.35577327, z: 0.56566906, w: 0.509908}
+      scale: {x: 1.0000008, y: 1.0000004, z: 1.0000014}
+    - name: Bodymodel1FinalRig:L_ArmUpper
+      parentName: Bodymodel1FinalRig:L_Clavicle
+      position: {x: -0.3309145, y: -0.041060366, z: 0.07382359}
+      rotation: {x: 0.002360627, y: -0.06487772, z: 0.10778315, w: 0.99205256}
+      scale: {x: 1.0000001, y: 0.9999997, z: 0.9999998}
+    - name: Bodymodel1FinalRig:L_ArmFore
+      parentName: Bodymodel1FinalRig:L_ArmUpper
+      position: {x: -0.6499722, y: -0.000000030397416, z: 0.00000007573416}
+      rotation: {x: -0.001851686, y: -0.010567765, z: -0.037751727, w: 0.9992296}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.0000008}
+    - name: Bodymodel1FinalRig:L_ArmHand
+      parentName: Bodymodel1FinalRig:L_ArmFore
+      position: {x: -0.7924173, y: 0.014992831, z: -0.018187549}
+      rotation: {x: 0.0048546754, y: -0.074582666, z: -0.045730125, w: 0.996154}
+      scale: {x: 1.000001, y: 1.0000004, z: 1.0000012}
+    - name: Bodymodel1FinalRig:L_ArmFingerIndex_1
+      parentName: Bodymodel1FinalRig:L_ArmHand
+      position: {x: -0.30934638, y: -0.009159782, z: 0.0024046213}
+      rotation: {x: -0.007231638, y: 0.124460265, z: 0.052398708, w: 0.99081373}
+      scale: {x: 0.99999917, y: 1.0000015, z: 1.0000008}
+    - name: Bodymodel1FinalRig:L_ArmFingerIndex_2
+      parentName: Bodymodel1FinalRig:L_ArmFingerIndex_1
+      position: {x: -0.1054442, y: 1.1368684e-15, z: 2.664535e-16}
+      rotation: {x: 0.00016062979, y: 0.013345809, z: 0.017239671, w: 0.9997623}
+      scale: {x: 1.0000011, y: 0.9999993, z: 1.0000004}
+    - name: Bodymodel1FinalRig:L_ArmFingerIndex_3
+      parentName: Bodymodel1FinalRig:L_ArmFingerIndex_2
+      position: {x: -0.15487097, y: -1.7053025e-15, z: -9.7699626e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_ArmFingerMid_1
+      parentName: Bodymodel1FinalRig:L_ArmHand
+      position: {x: -0.29208815, y: -0.0072277794, z: 0.05711329}
+      rotation: {x: -0.008101817, y: 0.12900263, z: 0.047730844, w: 0.99046177}
+      scale: {x: 0.99999917, y: 1.0000024, z: 1.0000011}
+    - name: Bodymodel1FinalRig:L_ArmFingerMid_2
+      parentName: Bodymodel1FinalRig:L_ArmFingerMid_1
+      position: {x: -0.14720277, y: -1.7053025e-15, z: 7.105427e-17}
+      rotation: {x: -0.000062450745, y: 0.008572114, z: 0.00728345, w: 0.9999368}
+      scale: {x: 1.0000026, y: 0.9999981, z: 1.0000006}
+    - name: Bodymodel1FinalRig:L_ArmFingerMid_3
+      parentName: Bodymodel1FinalRig:L_ArmFingerMid_2
+      position: {x: -0.14729384, y: -5.684342e-16, z: 3.1974422e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_ArmFingerRing_1
+      parentName: Bodymodel1FinalRig:L_ArmHand
+      position: {x: -0.2767109, y: -0.0090974625, z: 0.10903446}
+      rotation: {x: -0.003881596, y: 0.13000476, z: 0.080250055, w: 0.9882528}
+      scale: {x: 0.9999992, y: 1.0000019, z: 1.0000008}
+    - name: Bodymodel1FinalRig:L_ArmFingerRing_2
+      parentName: Bodymodel1FinalRig:L_ArmFingerRing_1
+      position: {x: -0.12505159, y: -5.684342e-16, z: 2.4868996e-16}
+      rotation: {x: 0.00024434357, y: 0.014954964, z: -0.034829397, w: 0.99928135}
+      scale: {x: 1.0000021, y: 0.99999905, z: 1.0000013}
+    - name: Bodymodel1FinalRig:L_ArmFingerRing_3
+      parentName: Bodymodel1FinalRig:L_ArmFingerRing_2
+      position: {x: -0.14103866, y: 2.8421708e-15, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_ArmFingerPinky_1
+      parentName: Bodymodel1FinalRig:L_ArmHand
+      position: {x: -0.25890067, y: -0.026008086, z: 0.16355169}
+      rotation: {x: -0.0045669544, y: 0.11854702, z: 0.07179514, w: 0.9903389}
+      scale: {x: 0.9999987, y: 1.0000014, z: 1.0000002}
+    - name: Bodymodel1FinalRig:L_ArmFingerPinky_2
+      parentName: Bodymodel1FinalRig:L_ArmFingerPinky_1
+      position: {x: -0.10596842, y: -1.1368684e-15, z: -2.1316282e-16}
+      rotation: {x: 0.00076208106, y: 0.023323582, z: -0.0012018445, w: 0.999727}
+      scale: {x: 1.0000015, y: 0.999999, z: 1.0000005}
+    - name: Bodymodel1FinalRig:L_ArmFingerPinky_3
+      parentName: Bodymodel1FinalRig:L_ArmFingerPinky_2
+      position: {x: -0.111593015, y: 0, z: 3.907985e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:L_ArmThumb_1
+      parentName: Bodymodel1FinalRig:L_ArmHand
+      position: {x: -0.15900557, y: -0.10215708, z: -0.08167843}
+      rotation: {x: -0.09101593, y: 0.4180006, z: 0.06600787, w: 0.90146244}
+      scale: {x: 0.99999994, y: 1.0000005, z: 1.0000006}
+    - name: Bodymodel1FinalRig:L_ArmThumb_2
+      parentName: Bodymodel1FinalRig:L_ArmThumb_1
+      position: {x: -0.12443149, y: -1.7053025e-15, z: -7.105427e-16}
+      rotation: {x: 0.012522456, y: 0.03235689, z: -0.0235159, w: 0.99912125}
+      scale: {x: 1.0000017, y: 1.0000008, z: 0.9999998}
+    - name: Bodymodel1FinalRig:L_ArmThumb_3
+      parentName: Bodymodel1FinalRig:L_ArmThumb_2
+      position: {x: -0.138623, y: -1.7053025e-15, z: 7.105427e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:R_Clavicle
+      parentName: Bodymodel1FinalRig:Spine_3
+      position: {x: -0.2632949, y: 0.090143405, z: 0.26608342}
+      rotation: {x: 0.49346876, y: -0.31982097, z: -0.59934586, w: -0.5431278}
+      scale: {x: 1, y: 1.0000005, z: 1.0000002}
+    - name: Bodymodel1FinalRig:R_ArmUpper
+      parentName: Bodymodel1FinalRig:R_Clavicle
+      position: {x: -0.37722647, y: -0.081336714, z: 0.08888759}
+      rotation: {x: -0.0150571875, y: 0.1493583, z: 0.10481315, w: 0.983097}
+      scale: {x: 1.0000006, y: 0.99999887, z: 0.9999999}
+    - name: Bodymodel1FinalRig:R_ArmFore
+      parentName: Bodymodel1FinalRig:R_ArmUpper
+      position: {x: -0.6499737, y: -0.000000039376964, z: -0.00000004346043}
+      rotation: {x: 0.005606408, y: 0.05351944, z: 0.0028254895, w: 0.99854714}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000002}
+    - name: Bodymodel1FinalRig:R_ArmHand
+      parentName: Bodymodel1FinalRig:R_ArmFore
+      position: {x: -0.64085156, y: 0.056378312, z: 0.008374363}
+      rotation: {x: -0.0048541524, y: 0.07458302, z: -0.045755286, w: 0.9961528}
+      scale: {x: 0.9999998, y: 0.9999999, z: 0.9999998}
+    - name: Bodymodel1FinalRig:R_ArmFingerIndex_1
+      parentName: Bodymodel1FinalRig:R_ArmHand
+      position: {x: -0.3095784, y: -2.2737367e-15, z: 4.2632563e-16}
+      rotation: {x: 0.0072327806, y: -0.1244608, z: 0.05240796, w: 0.9908131}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmFingerIndex_2
+      parentName: Bodymodel1FinalRig:R_ArmFingerIndex_1
+      position: {x: -0.105445094, y: 5.684342e-16, z: -1.5987211e-16}
+      rotation: {x: -0.00016104754, y: -0.013345582, z: 0.017263418, w: 0.99976194}
+      scale: {x: 0.99999946, y: 0.9999997, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmFingerIndex_3
+      parentName: Bodymodel1FinalRig:R_ArmFingerIndex_2
+      position: {x: -0.15487112, y: -1.1368684e-15, z: -3.5527136e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmFingerMid_1
+      parentName: Bodymodel1FinalRig:R_ArmHand
+      position: {x: -0.29208815, y: -0.0072223204, z: -0.05711314}
+      rotation: {x: 0.008098322, y: -0.12900443, z: 0.04777592, w: 0.99045944}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmFingerMid_2
+      parentName: Bodymodel1FinalRig:R_ArmFingerMid_1
+      position: {x: -0.14720388, y: -1.7053025e-15, z: -2.842171e-16}
+      rotation: {x: 0.00006207076, y: -0.008570891, z: 0.007247078, w: 0.999937}
+      scale: {x: 0.9999999, y: 1.0000006, z: 1.0000001}
+    - name: Bodymodel1FinalRig:R_ArmFingerMid_3
+      parentName: Bodymodel1FinalRig:R_ArmFingerMid_2
+      position: {x: -0.14729439, y: 2.8421708e-15, z: -3.907985e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmFingerRing_1
+      parentName: Bodymodel1FinalRig:R_ArmHand
+      position: {x: -0.27671006, y: -0.009098186, z: -0.10903439}
+      rotation: {x: 0.0038807276, y: -0.13000496, z: 0.080273576, w: 0.98825085}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999998}
+    - name: Bodymodel1FinalRig:R_ArmFingerRing_2
+      parentName: Bodymodel1FinalRig:R_ArmFingerRing_1
+      position: {x: -0.12505166, y: 5.684342e-16, z: 2.1316282e-16}
+      rotation: {x: -0.00024387683, y: -0.014955297, z: -0.034886118, w: 0.9992794}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000004}
+    - name: Bodymodel1FinalRig:R_ArmFingerRing_3
+      parentName: Bodymodel1FinalRig:R_ArmFingerRing_2
+      position: {x: -0.14103872, y: -1.1368684e-15, z: -1.2434498e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmFingerPinky_1
+      parentName: Bodymodel1FinalRig:R_ArmHand
+      position: {x: -0.25889966, y: -0.026006732, z: -0.16355169}
+      rotation: {x: 0.004580049, y: -0.11854707, z: 0.07170298, w: 0.9903456}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.9999998}
+    - name: Bodymodel1FinalRig:R_ArmFingerPinky_2
+      parentName: Bodymodel1FinalRig:R_ArmFingerPinky_1
+      position: {x: -0.10596828, y: 3.410605e-15, z: 7.105427e-17}
+      rotation: {x: -0.0007622914, y: -0.023324013, z: -0.0009852416, w: 0.9997272}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000002}
+    - name: Bodymodel1FinalRig:R_ArmFingerPinky_3
+      parentName: Bodymodel1FinalRig:R_ArmFingerPinky_2
+      position: {x: -0.111594744, y: -3.410605e-15, z: -2.842171e-16}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmThumb_1
+      parentName: Bodymodel1FinalRig:R_ArmHand
+      position: {x: -0.15900525, y: -0.1021351, z: 0.08167864}
+      rotation: {x: 0.09061055, y: -0.41859934, z: 0.061128534, w: 0.90156955}
+      scale: {x: 1.0000007, y: 1.0000005, z: 1}
+    - name: Bodymodel1FinalRig:R_ArmThumb_2
+      parentName: Bodymodel1FinalRig:R_ArmThumb_1
+      position: {x: -0.12443418, y: -1.1368684e-15, z: 8.5265126e-16}
+      rotation: {x: -0.0125274975, y: -0.03236383, z: -0.023499917, w: 0.9991213}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000005}
+    - name: Bodymodel1FinalRig:R_ArmThumb_3
+      parentName: Bodymodel1FinalRig:R_ArmThumb_2
+      position: {x: -0.13862538, y: -1.7053025e-15, z: -4.2632563e-16}
+      rotation: {x: -0.27643058, y: -0.027273871, z: -0.12105488, w: 0.952989}
+      scale: {x: 1, y: 1, z: 1}
+    - name: nurbsCircle1
+      parentName: Bodymodel1FinalRig:nurbsCircle1
+      position: {x: 0.31318972, y: 1.1915941, z: 0.572831}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 13.20748, y: 13.20748, z: 13.20748}
+    - name: nurbsCircle2
+      parentName: Bodymodel1FinalRig:nurbsCircle1
+      position: {x: -0.591845, y: 1.2397758, z: 0.51435}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 13.20748, y: 13.20748, z: 13.20748}
+    - name: Bodymodel1FinalRig:P_Body_Chest2
+      parentName: Warrior_Model_1.0(Clone)
+      position: {x: -0.0002525948, y: 0.027403649, z: 0.000000004200201}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:polySurface3
+      parentName: Bodymodel1FinalRig:P_Body_Chest2
+      position: {x: 3.3937695, y: -0.027403649, z: -0.000000004200201}
+      rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 73.18162, y: 73.18162, z: 73.18162}
+    - name: Bodymodel1FinalRig:transform2
+      parentName: Bodymodel1FinalRig:polySurface3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LegPlates
+      parentName: Bodymodel1FinalRig:polySurface3
+      position: {x: -1.222414e-17, y: 0.000049551654, z: -0.046386454}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bodymodel1FinalRig:transform1
+      parentName: Bodymodel1FinalRig:P_Body_Chest2
+      position: {x: 0.0002525948, y: -0.027403649, z: -0.000000004200201}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharBody
+      parentName: Bodymodel1FinalRig:P_Body_Chest2
+      position: {x: 0.0002525948, y: -0.027403649, z: -0.000000004200201}
+      rotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 73.18162, y: 73.18162, z: 73.18162}
+    - name: Bodymodel1FinalRig:R_FootIK
+      parentName: Warrior_Model_1.0(Clone)
+      position: {x: -0.088722706, y: 0.40710294, z: -0.9500333}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: CharLegs
+      parentName: Warrior_Model_1.0(Clone)
+      position: {x: -0.15179043, y: 2.4541895, z: 0.29809365}
+      rotation: {x: 0, y: -0.08815572, z: -0, w: 0.99610674}
+      scale: {x: 1.0221676, y: 0.7365168, z: 0.29133594}
+    - name: L_ShoulderPad
+      parentName: Warrior_Model_1.0(Clone)
+      position: {x: 0.15194881, y: 3.581057, z: -0.47419062}
+      rotation: {x: 0.061623715, y: 0.046191003, z: 0.028996468, w: 0.9966083}
+      scale: {x: 0.86594623, y: 0.86594623, z: 0.86594623}
+    - name: R_ShoulderPad
+      parentName: Warrior_Model_1.0(Clone)
+      position: {x: -0.7856404, y: 3.5941226, z: -0.41706312}
+      rotation: {x: 0.029411012, y: 0.047407597, z: -0.05870259, w: 0.99671537}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: d5edf89eae70e1d46829a468dd7a0e78,
+    type: 3}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

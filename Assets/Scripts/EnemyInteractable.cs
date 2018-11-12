@@ -33,6 +33,7 @@ public class EnemyInteractable : Interactable
     public override void OnFocused(Transform playerTransform)
     {
         base.OnFocused(playerTransform);
+        hasInteracted = true;
         targetIndicatorProjector.SetActive(true);
         audioSource.PlayOneShot(focusSfx);
     }

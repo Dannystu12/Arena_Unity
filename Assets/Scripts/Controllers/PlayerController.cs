@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask movementMask;
     [SerializeField] int raycastRange = 1000;
     [SerializeField] float maxTabDistance = 100f;
+    [Tooltip("In Degrees")][SerializeField] float fov = 90f; 
 
     private Interactable focus;
 
@@ -24,18 +25,7 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
 
-        //if(Input.GetMouseButtonDown(1))
-        //{
-        //    ProcessInteraction();
-        //}
-        //else if(Input.GetMouseButton(3)) 
-        //{
-        //    ProcessMovement();
-        //}
-        //else if(Input.GetMouseButtonUp(3))
-        //{
-        //    motor.StopMoving();
-        //}
+
     }
 
     public void FocusNextTarget()
@@ -74,17 +64,21 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ProcessInteraction()
+    public void ProcessInteraction(Vector3 mousePosition)
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, raycastRange))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
-            if (interactable != null)
+            if (interactable != null && interactable != focus)
             {
                 SetFocus(interactable);
+            }
+            else if(focus != null && interactable == null)
+            {
+                RemoveFocus();
             }
         }
     }
@@ -96,7 +90,6 @@ public class PlayerController : MonoBehaviour
         {
             if(focus != null) focus.OnDefocused();
             focus = newFocus;
-            motor.FollowTarget(focus);
         }
 
         focus.OnFocused(transform);
@@ -127,5 +120,27 @@ public class PlayerController : MonoBehaviour
     public void Rotate(float amount)
     {
         motor.Rotate(amount);
+    }
+
+    public void Attack()
+    {
+        if(focus != null && IsFacingFocus()) focus.Interact();
+    }
+
+    private bool IsFacingFocus()
+    {
+        if(focus != null)
+        {
+            Vector3 forward = transform.forward;
+            forward.y = 0;
+            Vector3 toFocus = focus.transform.position - transform.position;
+            toFocus.y = 0;
+
+            float cosAngle = Vector3.Dot(forward, toFocus) / (forward.magnitude * toFocus.magnitude);
+
+            return cosAngle > Mathf.Cos(fov / 2 * Mathf.Deg2Rad); 
+
+        }
+        return false;
     }
 }

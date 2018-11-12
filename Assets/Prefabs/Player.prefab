@@ -5491,7 +5491,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   raycastRange: 1000
-  maxTabDistance: 100
+  maxTabDistance: 500
+  fov: 45
 --- !u!114 &114196122119828472
 MonoBehaviour:
   m_ObjectHideFlags: 1

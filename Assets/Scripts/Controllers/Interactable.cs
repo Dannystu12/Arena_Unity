@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
 
 
     private bool isFocus = false;
-    private bool hasInteracted = false;
+    protected bool hasInteracted = false;
     private Transform player;
     private Projector focusIndicator;
 

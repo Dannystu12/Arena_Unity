@@ -36,12 +36,22 @@ public class InputManager : MonoBehaviour {
                 camController.Rotate(Input.GetAxis("Horizontal"));
                 playerController.Rotate(Input.GetAxis("Horizontal"));
             }
+
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                playerController.Attack();
+            }
         }
 
 
 
         //Camera
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
+        {
+            playerController.ProcessInteraction(Input.mousePosition);
+        }
+
+        if(Input.GetMouseButton(1))
         {
             camController.UpdateRotation(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
         }
