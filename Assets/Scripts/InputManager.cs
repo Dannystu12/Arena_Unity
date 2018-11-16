@@ -22,6 +22,7 @@ public class InputManager : MonoBehaviour {
         if (!playerController.IsDead())
         {
 
+            //Movement
             if (Mathf.Abs(JoystickL.Horizontal) > Mathf.Epsilon
                 || Mathf.Abs(JoystickL.Vertical) > Mathf.Epsilon)
             {
@@ -32,32 +33,38 @@ public class InputManager : MonoBehaviour {
                 playerController.StopMoving();
             }
 
-            if(Input.GetKeyDown(KeyCode.Alpha1)) // TODO Change to touch attack Button
+            //Targeting
+            if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began) )
+            {
+                //Ensure touch is not on joysticks before processing interaction
+                RectTransform rectL = JoystickL.GetComponent<RectTransform>();
+                RectTransform rectR = JoystickR.GetComponent<RectTransform>();
+                if (!RectTransformUtility.RectangleContainsScreenPoint(rectL, Input.GetTouch(0).position)
+                    && !RectTransformUtility.RectangleContainsScreenPoint(rectR, Input.GetTouch(0).position))
+                {
+                    playerController.ProcessInteraction(Input.GetTouch(0).position);
+                }
+
+            }
+
+            //Attacking
+            if (Input.GetKeyDown(KeyCode.Alpha1)) // TODO Change to touch attack Button
             {
                 playerController.Attack();
             }
+
+            //Camera Rotation
+            if (Mathf.Abs(JoystickR.Horizontal) > Mathf.Epsilon
+                || Mathf.Abs(JoystickR.Vertical) > Mathf.Epsilon)
+            {
+                camController.UpdateRotation(JoystickR.Horizontal, JoystickR.Vertical);
+            }
+
+            //Camera Zoom
+            if (Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")) > Mathf.Epsilon)
+            {
+                camController.UpdateDistance(Input.GetAxis("Mouse ScrollWheel"));
+            }
         }
-
-
-
-        //Camera
-        if (Input.GetMouseButtonDown(0))
-        {
-            playerController.ProcessInteraction(Input.mousePosition);
-        }
-
-        if(Input.GetMouseButton(1))
-        {
-            camController.UpdateRotation(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        }
-
-        //Update zoom
-        if(Mathf.Abs(Input.GetAxis("Mouse ScrollWheel")) > Mathf.Epsilon)
-        {
-            camController.UpdateDistance(Input.GetAxis("Mouse ScrollWheel"));
-        }
-
-
-
     }
 }

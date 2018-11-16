@@ -56,6 +56,7 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (target == null) return;
         transform.position = target.position;
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
 
