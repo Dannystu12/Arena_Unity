@@ -29,11 +29,14 @@ public class PlayerMotor : MonoBehaviour {
     }
 
 
-    public void Move(float moveAmount)
+    public void Move(float vertical, float horizontal, Vector3 cameraForward, Vector3 cameraRight)
     {
         agent.isStopped = false;
-        Vector3 motionVector = transform.forward * moveSpeed * moveAmount;
-        agent.Move(motionVector);
+        Vector3 moveDirection = vertical * cameraForward + horizontal * cameraRight;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookSpeed);
+        agent.Move(moveDirection * moveSpeed * Time.deltaTime);
+        
     }
 
 

@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Left Joystick
+  - Right Joystick
   layers:
   - Default
   - TransparentFX

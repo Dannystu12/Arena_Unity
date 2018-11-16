@@ -107,9 +107,9 @@ public class PlayerController : MonoBehaviour
         return thisCharacter.IsDead();
     }
 
-    public void Move(float moveAmount)
+    public void Move(float vertical, float horizontal)
     {
-        motor.Move(moveAmount);
+        motor.Move(vertical, horizontal, cam.transform.forward, cam.transform.right);
     }
 
     public void StopMoving()

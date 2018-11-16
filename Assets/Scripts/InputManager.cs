@@ -6,10 +6,14 @@ public class InputManager : MonoBehaviour {
 
     private CameraController camController;
     private PlayerController playerController;
+    private Joystick JoystickL;
+    private Joystick JoystickR;
 
 	void Start () {
         camController = FindObjectOfType<CameraController>();
         playerController = FindObjectOfType<PlayerController>();
+        JoystickL = GameObject.FindGameObjectWithTag("Left Joystick").GetComponent<Joystick>();
+        JoystickR = GameObject.FindGameObjectWithTag("Right Joystick").GetComponent<Joystick>();
 	}
 	
 	void Update () {
@@ -17,27 +21,18 @@ public class InputManager : MonoBehaviour {
         //Player
         if (!playerController.IsDead())
         {
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                playerController.FocusNextTarget();
-            }
 
-            if (Mathf.Abs(Input.GetAxis("Vertical")) > Mathf.Epsilon)
+            if (Mathf.Abs(JoystickL.Horizontal) > Mathf.Epsilon
+                || Mathf.Abs(JoystickL.Vertical) > Mathf.Epsilon)
             {
-                playerController.Move(Input.GetAxis("Vertical"));
+                playerController.Move(JoystickL.Vertical, JoystickL.Horizontal);
             }
             else
             {
                 playerController.StopMoving();
             }
 
-            if(Mathf.Abs(Input.GetAxis("Horizontal")) > Mathf.Epsilon)
-            {
-                camController.Rotate(Input.GetAxis("Horizontal"));
-                playerController.Rotate(Input.GetAxis("Horizontal"));
-            }
-
-            if(Input.GetKeyDown(KeyCode.Alpha1))
+            if(Input.GetKeyDown(KeyCode.Alpha1)) // TODO Change to touch attack Button
             {
                 playerController.Attack();
             }
