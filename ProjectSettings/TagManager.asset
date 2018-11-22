@@ -7,6 +7,7 @@ TagManager:
   - Wall
   - Left Joystick
   - Right Joystick
+  - Attack Button
   layers:
   - Default
   - TransparentFX

@@ -5492,7 +5492,7 @@ MonoBehaviour:
     m_Bits: 256
   raycastRange: 1000
   maxTabDistance: 500
-  fov: 45
+  fov: 90
 --- !u!114 &114196122119828472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5505,8 +5505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stoppingDistanceFactor: 0.9
-  lookSpeed: 5
-  moveSpeed: 1
+  lookSpeed: 10
+  moveSpeed: 100
 --- !u!114 &114341590765984896
 MonoBehaviour:
   m_ObjectHideFlags: 1

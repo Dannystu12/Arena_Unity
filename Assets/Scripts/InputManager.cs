@@ -8,13 +8,16 @@ public class InputManager : MonoBehaviour {
     private PlayerController playerController;
     private Joystick JoystickL;
     private Joystick JoystickR;
+    private RectTransform AttackButtonRT;
+
 
 	void Start () {
         camController = FindObjectOfType<CameraController>();
         playerController = FindObjectOfType<PlayerController>();
         JoystickL = GameObject.FindGameObjectWithTag("Left Joystick").GetComponent<Joystick>();
         JoystickR = GameObject.FindGameObjectWithTag("Right Joystick").GetComponent<Joystick>();
-	}
+        AttackButtonRT = GameObject.FindGameObjectWithTag("Attack Button").GetComponent<RectTransform>();
+    }
 	
 	void Update () {
 
@@ -36,22 +39,18 @@ public class InputManager : MonoBehaviour {
             //Targeting
             if ((Input.touchCount > 0) && (Input.GetTouch(0).phase == TouchPhase.Began) )
             {
-                //Ensure touch is not on joysticks before processing interaction
+                //Ensure touch is not on joysticks or attack button before processing interaction
                 RectTransform rectL = JoystickL.GetComponent<RectTransform>();
                 RectTransform rectR = JoystickR.GetComponent<RectTransform>();
                 if (!RectTransformUtility.RectangleContainsScreenPoint(rectL, Input.GetTouch(0).position)
-                    && !RectTransformUtility.RectangleContainsScreenPoint(rectR, Input.GetTouch(0).position))
+                    && !RectTransformUtility.RectangleContainsScreenPoint(rectR, Input.GetTouch(0).position)
+                    && !RectTransformUtility.RectangleContainsScreenPoint(AttackButtonRT, Input.GetTouch(0).position))
                 {
                     playerController.ProcessInteraction(Input.GetTouch(0).position);
                 }
 
             }
 
-            //Attacking
-            if (Input.GetKeyDown(KeyCode.Alpha1)) // TODO Change to touch attack Button
-            {
-                playerController.Attack();
-            }
 
             //Camera Rotation
             if (Mathf.Abs(JoystickR.Horizontal) > Mathf.Epsilon
@@ -65,6 +64,14 @@ public class InputManager : MonoBehaviour {
             {
                 camController.UpdateDistance(Input.GetAxis("Mouse ScrollWheel"));
             }
+        }
+    }
+
+    public void Attack()
+    {
+        if(!playerController.IsDead())
+        {
+            playerController.Attack();
         }
     }
 }
